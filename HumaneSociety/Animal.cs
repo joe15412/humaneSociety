@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace HumaneSociety
 {
-    class Program
+    class Animal 
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
