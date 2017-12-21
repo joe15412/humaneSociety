@@ -92,7 +92,8 @@ namespace HumaneSociety
             Console.WriteLine("1: Name");
             Console.WriteLine("2: Breed");
             Console.WriteLine("3: Size");
-            Console.WriteLine("4: Price");
+            Console.WriteLine("4: Gender");
+            Console.WriteLine("5: Price");
 
 
         }
@@ -103,7 +104,8 @@ namespace HumaneSociety
             Console.WriteLine("2: Breed");
             Console.WriteLine("3: Color");
             Console.WriteLine("4: Size");
-            Console.WriteLine("5: Price");
+            Console.WriteLine("5: Gender");
+            Console.WriteLine("6: Price");
         }
         public void SearchBirds()
         {
@@ -116,7 +118,7 @@ namespace HumaneSociety
         }
         public void SearchReptiles()
         {
-            Console.WriteLine("Search for repitles");
+            Console.WriteLine("Search for reptiles");
             Console.WriteLine("1: Name");
             Console.WriteLine("2: Species");
             Console.WriteLine("3: Color");
@@ -130,7 +132,8 @@ namespace HumaneSociety
             Console.WriteLine("2: Breed");
             Console.WriteLine("3: Color");
             Console.WriteLine("4: Size");
-            Console.WriteLine("5: Price");
+            Console.WriteLine("5: Gender");
+            Console.WriteLine("6: Price");
 
         }
         public void SearchFerrets()
@@ -140,7 +143,8 @@ namespace HumaneSociety
             Console.WriteLine("2: Breed");
             Console.WriteLine("3: Color");
             Console.WriteLine("4: Size");
-            Console.WriteLine("5: Price");
+            Console.WriteLine("5: Gender");
+            Console.WriteLine("6: Price");
 
         }
         public void AdoptInformation()
