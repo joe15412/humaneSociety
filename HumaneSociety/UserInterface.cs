@@ -20,8 +20,8 @@ namespace HumaneSociety
             Console.WriteLine("1: Costumer");
             Console.WriteLine("2: Employee?");
         }
-       public string GetUserInput()
-        {   string userInput = Console.ReadLine();
+        public string GetUserInput()
+        { string userInput = Console.ReadLine();
             return userInput;
         }
         //user name or password   
@@ -64,10 +64,92 @@ namespace HumaneSociety
         {
             Console.WriteLine("Please enter your password");
         }
+
+        public void employeeAddAnimal()
+        {
+            Console.WriteLine("Do you want to add a new animal?");
+        }
+        public void employeeRemoveAnimal()
+        {
+            Console.WriteLine("Do you want to remove an animal that was adopted");
+
+        }
+
+        public void userSelectAnimal()
+        {
+            Console.WriteLine("What type of animal are you looking for?");
+            Console.WriteLine("1: Dog");
+            Console.WriteLine("2: Cat");
+            Console.WriteLine("3: Reptiles");
+            Console.WriteLine("4: Birds");
+            Console.WriteLine("5: Ferrets");
+
+
+        }
+        public void SearchCats()
+        {
+            Console.WriteLine("Search for cats by");
+            Console.WriteLine("1: Name");
+            Console.WriteLine("2: Breed");
+            Console.WriteLine("3: Size");
+
+
+        }
+        public void SearchDogs()
+        {
+            Console.WriteLine("Search for dogs by");
+            Console.WriteLine("1: Name");
+            Console.WriteLine("2: Breed");
+            Console.WriteLine("3: Color");
+            Console.WriteLine("4: Size");
+        }
+        public void SearchBirds()
+        {
+            Console.WriteLine("Search for birds by");
+            Console.WriteLine("1:Name");
+            Console.WriteLine("2: Breed");
+            Console.WriteLine("3: Color");
+            Console.WriteLine("4: Size");
+         }
+        public void SearchReptiles()
+        {
+            Console.WriteLine("Search for repitles");
+            Console.WriteLine("1: Name");
+            Console.WriteLine("2: Species");
+            Console.WriteLine("3: Color");
+            Console.WriteLine("4: Size");
+        }
+        public void SearchRabbits()
+        {
+            Console.WriteLine("Search for rabbits");
+            Console.WriteLine("1: Name");
+            Console.WriteLine("2: Breed");
+            Console.WriteLine("3: Color");
+            Console.WriteLine("4: Size");
+
+        }
+        public void SearchFerrets()
+        {
+            Console.WriteLine("Search for ferrets");
+            Console.WriteLine("1: Name");
+            Console.WriteLine("2: Breed");
+            Console.WriteLine("3: Color");
+            Console.WriteLine("4: Size");
+
+        }
+        public void AdoptInformation()
+        {
+
+            Console.WriteLine("Do you want information on adopting this animal?");
+            Console.WriteLine("1: Yes");
+            Console.WriteLine("2: No");
+        }
         
 
 
-    }          
+    }
+
+}          
         
       
 
@@ -95,8 +177,3 @@ namespace HumaneSociety
         // Then after they view/buy/change something, as if they wanted to look at another animal.
         // when creating a new account, ask if they are an employee. Then make a new UI asking what the employee password is
 
->>>>>>> 4a5762f6c62659f36b8ae269cab49b16fe31144d
-    }
-
-}
-}
