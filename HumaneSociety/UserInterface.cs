@@ -20,16 +20,18 @@ namespace HumaneSociety
             Console.WriteLine("1: Costumer");
             Console.WriteLine("2: Employee?");
         }
-       public string GetUserInput()
-        {   string userInput = Console.ReadLine();
+        public string GetUserInput()
+        {
+            string userInput = Console.ReadLine();
             return userInput;
         }
         //user name or password   
         public void DisplayReturningUserOption()
         {
             Console.WriteLine("Are you a");
-            Console.WriteLine("1:new user");
-            Console.WriteLine("2: returning user?");
+            Console.WriteLine("1: New User?");
+            Console.WriteLine("2: Returning User?");
+            Console.WriteLine("3: Guest?");
         }
 
         public void DisplayUserFirstNameOption()
@@ -50,7 +52,7 @@ namespace HumaneSociety
         }
         public void DisplayUserEmailInputOption()
         {
-            Console.WriteLine("Please enter your email");
+            Console.WriteLine("Please enter your email..");
         }
         public void DisplayUserPhoneNumberInputOption()
         {
@@ -64,34 +66,76 @@ namespace HumaneSociety
         {
             Console.WriteLine("Please enter your password");
         }
-        
 
+        public void EmployeeAddAnimal()
+        {
+            Console.WriteLine("Do you want to add a new animal?");
+        }
+        public void AddAnimalType()
+        {
+            Console.WriteLine("What type of Animal do you want to add?");
+        }
+        public void AddAnimalName()
+        {
+            Console.WriteLine("What is there name?");
+        }
+        public void AddAnimalGender()
+        {
+            Console.WriteLine("Is the animal");
+            Console.WriteLine("1: Male");
+            Console.WriteLine("2: Female");
+        }
+        public void AddAnimalBreed()
+        {
+            Console.WriteLine("What is the Animals Breed?");
 
-    }          
-        
-      
+        }
+        public void AddAnimalPrice()
+        {
+            Console.WriteLine("What is the Animal Price?");
+        }
+        public void AddAnimalColor()
+        {
+            Console.WriteLine("What color is the animal");
+        }
+        public void EmployeeRemoveAnimal()
+        {
+            Console.WriteLine("Do you want to remove an animal that was adopted");
+        }
+        public void UserSelectAnimal()
+        {
+            Console.WriteLine("What type of animal are you looking for?");
+            Console.WriteLine("1: Dog");
+            Console.WriteLine("2: Cat");
+            Console.WriteLine("3: Reptiles");
+            Console.WriteLine("4: Birds");
+            Console.WriteLine("5: Ferrets");
+            Console.WriteLine("6: Rabbits");
 
-       //Put a password for creating a new account with employee access.
+            // in client, we will match the pick to save what their choice was. Then we will take the info for later UIs
+        }
 
-        // Ask if there was a name/animalID they were searching for in the database
+        // for(int i ; i < animal.attributes.count; i++) { cw"i + ")" + animal.Attributes[i] "."
+        //public void DisplayAnimalOptions(Client client)
+        //{
+        //    Console.WriteLine("Search for " + client.animalChoice + " by:");
+        //    Console.WriteLine("1: Name");
+        //    Console.WriteLine("2: Breed/Species");
+        //    Console.WriteLine("3: Color");
+        //    Console.WriteLine("4: Size");
+        //    Console.WriteLine("5: Gender");
+        //    Console.WriteLine("6: Price");
+        //    //UI.DisplaySearchOptions(this)
+        //}
+         public void AdoptInformation()
+        {
 
-        // ask if there were any specifications they wanted to look deeper into (put all the options into the UI)
+            Console.WriteLine("Do you want information on adopting this animal?");
+            Console.WriteLine("1: Yes");
+            Console.WriteLine("2: No");
+            Console.WriteLine("3: Search again");
+            Console.WriteLine("4: Start Over"); 
+        }
+    }
+}          
 
-        // or if they just want to view their names/ show they names for all animals in there
-
-        // Then show the information for that animal.
-
-        // If they are an employee, ask if they wanted to edit the information for this animal
-
-        // if they want to change it, then allow them to make an input, then replace the information in the database.
-
-        // THen show the information for the animal again with the updated informatiomn
-
-        // otherwise if they are a customer/non employee, ask if they want to adopt the dog. Or if they wanted to search for another animal.
-
-        //if they want to adopt the animal, use swipe to impliment a buying system.
-        // if we cant use an api in this instance, I would do something like we did soda machine but I dont think thats the case.
-
-        // Then after they view/buy/change something, as if they wanted to look at another animal.
-        // when creating a new account, ask if they are an employee. Then make a new UI asking what the employee password is
-}
