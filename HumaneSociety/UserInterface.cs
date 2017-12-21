@@ -21,7 +21,8 @@ namespace HumaneSociety
             Console.WriteLine("2: Employee?");
         }
         public string GetUserInput()
-        { string userInput = Console.ReadLine();
+        {
+            string userInput = Console.ReadLine();
             return userInput;
         }
         //user name or password   
@@ -85,70 +86,24 @@ namespace HumaneSociety
             Console.WriteLine("5: Ferrets");
             Console.WriteLine("6: Rabbits");
 
-
+            // in cliwnt, we will match the pick to save what their choice was. Then we will take the info for later UIs
         }
-        public void SearchCats()
+
+        // for(int i ; i < animal.attributes.count; i++) { cw"i + ")" + animal.Attributes[i] "."
+        public void DisplayAnimalOptions(Client client)
         {
-            Console.WriteLine("Search for cats by");
+            Console.WriteLine("Search for " + client.animalChoice + " by:");
             Console.WriteLine("1: Name");
-            Console.WriteLine("2: Breed");
+            Console.WriteLine("2: Breed/Species");
             Console.WriteLine("3: Color");
             Console.WriteLine("4: Size");
             Console.WriteLine("5: Gender");
             Console.WriteLine("6: Price");
-
-
-        }
-        public void SearchDogs()
-        {
-            Console.WriteLine("Search for dogs by");
-            Console.WriteLine("1: Name");
-            Console.WriteLine("2: Breed");
-            Console.WriteLine("3: Color");
-            Console.WriteLine("4: Size");
-            Console.WriteLine("5: Gender");
-            Console.WriteLine("6: Price");
-        }
-        public void SearchBirds()
-        {
-            Console.WriteLine("Search for birds by");
-            Console.WriteLine("1:Name");
-            Console.WriteLine("2: Breed");
-            Console.WriteLine("3: Color");
-            Console.WriteLine("4: Size");
-            Console.WriteLine("5: Price");
-        }
-        public void SearchReptiles()
-        {
-            Console.WriteLine("Search for reptiles");
-            Console.WriteLine("1: Name");
-            Console.WriteLine("2: Species");
-            Console.WriteLine("3: Color");
-            Console.WriteLine("4: Size");
-            Console.WriteLine("5: Price");
-        }
-        public void SearchRabbits()
-        {
-            Console.WriteLine("Search for rabbits");
-            Console.WriteLine("1: Name");
-            Console.WriteLine("2: Breed");
-            Console.WriteLine("3: Color");
-            Console.WriteLine("4: Size");
-            Console.WriteLine("5: Gender");
-            Console.WriteLine("6: Price");
+           //UI.DisplaySearchOptions(this)
 
         }
-        public void SearchFerrets()
-        {
-            Console.WriteLine("Search for ferrets");
-            Console.WriteLine("1: Name");
-            Console.WriteLine("2: Breed");
-            Console.WriteLine("3: Color");
-            Console.WriteLine("4: Size");
-            Console.WriteLine("5: Gender");
-            Console.WriteLine("6: Price");
 
-        }
+
         public void AdoptInformation()
         {
 
@@ -158,36 +113,32 @@ namespace HumaneSociety
             Console.WriteLine("3: Search again");
             Console.WriteLine("4: Start Over");
         }
-        
-
-
     }
-
 }          
-        
-      
+
+
 
        //Put a password for creating a new account with employee access.
 
-        // Ask if there was a name/animalID they were searching for in the database
+// Ask if there was a name/animalID they were searching for in the database
 
-        // ask if there were any specifications they wanted to look deeper into (put all the options into the UI)
+// ask if there were any specifications they wanted to look deeper into (put all the options into the UI)
 
-        // or if they just want to view their names/ show they names for all animals in there
+// or if they just want to view their names/ show they names for all animals in there
 
-        // Then show the information for that animal.
+// Then show the information for that animal.
 
-        // If they are an employee, ask if they wanted to edit the information for this animal
+// If they are an employee, ask if they wanted to edit the information for this animal
 
-        // if they want to change it, then allow them to make an input, then replace the information in the database.
+// if they want to change it, then allow them to make an input, then replace the information in the database.
 
-        // THen show the information for the animal again with the updated informatiomn
+// THen show the information for the animal again with the updated informatiomn
 
-        // otherwise if they are a customer/non employee, ask if they want to adopt the dog. Or if they wanted to search for another animal.
+// otherwise if they are a customer/non employee, ask if they want to adopt the dog. Or if they wanted to search for another animal.
 
-        //if they want to adopt the animal, use swipe to impliment a buying system.
-        // if we cant use an api in this instance, I would do something like we did soda machine but I dont think thats the case.
+//if they want to adopt the animal, use swipe to impliment a buying system.
+// if we cant use an api in this instance, I would do something like we did soda machine but I dont think thats the case.
 
-        // Then after they view/buy/change something, as if they wanted to look at another animal.
-        // when creating a new account, ask if they are an employee. Then make a new UI asking what the employee password is
+// Then after they view/buy/change something, as if they wanted to look at another animal.
+// when creating a new account, ask if they are an employee. Then make a new UI asking what the employee password is
 
