@@ -66,7 +66,26 @@ namespace HumaneSociety
         {
             Console.WriteLine("Please enter your password");
         }
+        public void DisplayUserStreetNumber()
+        {
+            Console.WriteLine("What is your Street Number?");
+        }
+        public void DisplayStreetName()
+        {
+            Console.WriteLine("What is your Street Name?");
+        }
+        public void DisplayCityName()
+        {
+            Console.WriteLine("What City do you live in?");
+        }
+        public void DisplayStateNAme()
+        {
+            Console.WriteLine("What State do you live in?");
+        }
 
+        public void DisplayZipCode()
+        {
+            Console.WriteLine("What is your Zip Code?");
         public void EmployeeAddAnimal()
         {
             Console.WriteLine("Do you want to add a new animal?");
