@@ -10,7 +10,6 @@ namespace HumaneSociety
     public class UserInterFace
 
     //employee or costumer
-
     {
 
         public void Welcome()
@@ -33,7 +32,7 @@ namespace HumaneSociety
             Console.WriteLine("2: Returning User?");
             Console.WriteLine("3: Guest?");
         }
-
+        //add name
         public void DisplayUserFirstNameOption()
         {
             Console.WriteLine("Please enter Your First Name");
@@ -42,14 +41,17 @@ namespace HumaneSociety
         {
             Console.WriteLine("Please enter Your Last Name");
         }
+        //make username
         public void DisplaySetUserNameOption()
         {
             Console.WriteLine("Please create a user name");
         }
+        //password
         public void DisplaySetUserPassWordOption()
         {
             Console.WriteLine("Please create a password");
         }
+        //add email and phone number
         public void DisplayUserEmailInputOption()
         {
             Console.WriteLine("Please enter your email..");
@@ -66,7 +68,29 @@ namespace HumaneSociety
         {
             Console.WriteLine("Please enter your password");
         }
+        //add address
+        public void DisplayUserStreetNumber()
+        {
+            Console.WriteLine("What is your Street Number?");
+        }
+        public void DisplayStreetName()
+        {
+            Console.WriteLine("What is your Street Name?");
+        }
+        public void DisplayCityName()
+        {
+            Console.WriteLine("What City do you live in?");
+        }
+        public void DisplayStateNAme()
+        {
+            Console.WriteLine("What State do you live in?");
+        }
 
+        public void DisplayZipCode()
+        {
+            Console.WriteLine("What is your Zip Code?");
+        }
+        //employee adds animal
         public void EmployeeAddAnimal()
         {
             Console.WriteLine("Do you want to add a new animal?");
@@ -102,6 +126,7 @@ namespace HumaneSociety
         {
             Console.WriteLine("Do you want to remove an animal that was adopted");
         }
+        //select animal
         public void UserSelectAnimal()
         {
             Console.WriteLine("What type of animal are you looking for?");
