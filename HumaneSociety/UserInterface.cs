@@ -100,7 +100,7 @@ namespace HumaneSociety
         {
             Console.WriteLine("What City do you live in?");
         }
-        public void DisplayStateNAme()
+        public void DisplayStateName()
         {
             Console.WriteLine("What State do you live in?");
         }
