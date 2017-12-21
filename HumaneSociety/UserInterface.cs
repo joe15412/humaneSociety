@@ -83,6 +83,7 @@ namespace HumaneSociety
             Console.WriteLine("3: Reptiles");
             Console.WriteLine("4: Birds");
             Console.WriteLine("5: Ferrets");
+            Console.WriteLine("6: Rabbits");
 
 
         }
@@ -91,9 +92,10 @@ namespace HumaneSociety
             Console.WriteLine("Search for cats by");
             Console.WriteLine("1: Name");
             Console.WriteLine("2: Breed");
-            Console.WriteLine("3: Size");
-            Console.WriteLine("4: Gender");
-            Console.WriteLine("5: Price");
+            Console.WriteLine("3: Color");
+            Console.WriteLine("4: Size");
+            Console.WriteLine("5: Gender");
+            Console.WriteLine("6: Price");
 
 
         }
