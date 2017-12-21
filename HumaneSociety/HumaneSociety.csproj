@@ -47,14 +47,42 @@
     <Compile Include="Animal.cs" />
     <Compile Include="Bird.cs" />
     <Compile Include="Cat.cs" />
+    <Compile Include="Client.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="Ferret.cs" />
+    <Compile Include="HumaneSocietyDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HumaneSocietyDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Management.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Rabbit.cs" />
+    <Compile Include="UserInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="HumaneSocietyDatabaseDataSet.xsc">
+      <DependentUpon>HumaneSocietyDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HumaneSocietyDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HumaneSocietyDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HumaneSocietyDatabaseDataSet.xss">
+      <DependentUpon>HumaneSocietyDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

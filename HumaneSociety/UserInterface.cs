@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace HumaneSociety
 {
-    class UserInterface
+    public class UserInterface
     {
+        public string GetUserInput()
+        {
+            string userInput = Console.ReadLine();
+            return userInput;
+        }
     }
 }
