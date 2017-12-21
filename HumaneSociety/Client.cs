@@ -11,7 +11,7 @@ namespace HumaneSociety
     {
 
         string status;
-        UserInterface UI;
+        UserInterFace UI;
         Management management;
         string userName;
         string passWord;

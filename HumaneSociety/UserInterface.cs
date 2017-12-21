@@ -94,9 +94,4 @@ namespace HumaneSociety
 
         // Then after they view/buy/change something, as if they wanted to look at another animal.
         // when creating a new account, ask if they are an employee. Then make a new UI asking what the employee password is
-
->>>>>>> 4a5762f6c62659f36b8ae269cab49b16fe31144d
-    }
-
-}
 }
