@@ -10,7 +10,6 @@ namespace HumaneSociety
     public class UserInterFace
 
     //employee or costumer
-
     {
 
         public void Welcome()
@@ -127,6 +126,7 @@ namespace HumaneSociety
         {
             Console.WriteLine("Do you want to remove an animal that was adopted");
         }
+        //select animal
         public void UserSelectAnimal()
         {
             Console.WriteLine("What type of animal are you looking for?");
