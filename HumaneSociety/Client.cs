@@ -13,11 +13,14 @@ namespace HumaneSociety
         string status;
         UserInterFace UI;
         Management management;
+        public int userID;
+            // will change
         string userName;
         string passWord;
         string Address;
         string Gender;
         string phoneNumber;
+
 
         public Client()
         {

@@ -11,11 +11,13 @@ namespace HumaneSociety
     class Management
     {
         HumaneSocietyDatabaseDataSet humaneSocietyData;
+        List<int> userNameIDs = new List<int>();
         List<char> userNames = new List<char>();
         List<char> passWords = new List<char>();
         List<char> addresses = new List<char>();
         List<char> genders = new List<char>();
         List<char> phoneNumbers = new List<char>();
+
 
 
         public Management()
@@ -34,6 +36,13 @@ namespace HumaneSociety
                          where x == Convert.ToChar(userInput)
                          select x).ToList();
         }
+        //void FindUserNameID(string userInput)
+        //{
+        //    userNameIDs.Clear();
+        //    userNameIDs = (from x in humaneSocietyData.Users.FindByUser_ID()
+        //                 where x == Convert.ToInt32(userInput)
+        //                 select x).ToList();
+        //}
         bool CheckUserName(string userInput)
         {
             FindUserName(userInput);
@@ -68,6 +77,7 @@ namespace HumaneSociety
         {
             bool AddressCreationAllowed = CheckList(addresses);
             return AddressCreationAllowed;
+            // this will have to go more in depth since there are several foreign keys
         }
         void FindAddress(string userInput)
         {
@@ -100,14 +110,78 @@ namespace HumaneSociety
                             where x == Convert.ToChar(userInput)
                             select x).ToList();
         }
-        void AddUser(string userNameInput, string passWordInput, string AddressInput, string genderInput,string phoneNumberInput)
+        int AddUser(string userNameInput, string passWordInput, string AddressInput, string genderInput,string phoneNumberInput)
         {
             HumaneSocietyDatabaseDataSet.UsersRow newUsersRow = humaneSocietyData.Users.NewUsersRow();
             newUsersRow.UserName_ID = AddUserNameID(userNameInput);
             newUsersRow.PassWord_ID = AddPassWordID(passWordInput);
             newUsersRow.Gender_ID = AddGenderID(genderInput);
             newUsersRow.Phone_Number_ID = AddPhoneNumberID(phoneNumberInput);
-            
+            return newUsersRow.User_ID;
+        }
+        int ReplaceUserName(int userID, string userNameInput)
+        {
+            if (CheckUserName(userNameInput) == true)
+            {
+                int newUserNameID = AddUserNameID(userNameInput);
+                HumaneSocietyDatabaseDataSet.UsersRow currentUserRow = humaneSocietyData.Users.FindByUser_ID(userID);
+                currentUserRow.UserName_ID = newUserNameID;
+                return currentUserRow.UserName_ID;
+               
+            }
+            else
+            {
+                FindUserName(userNameInput);
+                return userNames[0];
+            }
+        }
+        int ReplacePassWord(int userID, string passWordInput)
+        {
+            if (CheckPassWord(passWordInput) == true)
+            {
+                int newPassWordID = AddPassWordID(passWordInput);
+                HumaneSocietyDatabaseDataSet.UsersRow currentUserRow = humaneSocietyData.Users.FindByUser_ID(userID);
+                currentUserRow.PassWord_ID = newPassWordID;
+                return newPassWordID;
+
+            }
+            else
+            {
+                FindPassword(passWordInput);
+                return passWords[0];
+            }
+        }
+        int ReplaceGender(int userID, string genderInput)
+        {
+            if (CheckGender(genderInput) == true)
+            {
+                int newGenderID = AddGenderID(genderInput);
+                HumaneSocietyDatabaseDataSet.UsersRow currentUserRow = humaneSocietyData.Users.FindByUser_ID(userID);
+                currentUserRow.Gender_ID = newGenderID;
+                return newGenderID;
+
+            }
+            else
+            {
+                FindGender(genderInput);
+                return genders[0];
+            }
+        }
+        int ReplacePhoneNumber(int userID, string phoneNumberInput)
+        {
+            if (CheckGender(phoneNumberInput) == true)
+            {
+                int newPhoneNumberID = AddPhoneNumberID(phoneNumberInput);
+                HumaneSocietyDatabaseDataSet.UsersRow currentUserRow = humaneSocietyData.Users.FindByUser_ID(userID);
+                currentUserRow.Phone_Number_ID = newPhoneNumberID;
+                return newPhoneNumberID;
+
+            }
+            else
+            {
+                FindPhoneNumber(phoneNumberInput);
+                return phoneNumbers[0];
+            }
         }
         int AddUserNameID(string userNameInput)
         {
