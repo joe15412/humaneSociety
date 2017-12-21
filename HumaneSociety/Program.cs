@@ -10,7 +10,8 @@ namespace HumaneSociety
     {
         static void Main(string[] args)
         {
-            
+            Client client1 = new Client();
+            client1.RunClient();
         }
     }
 }

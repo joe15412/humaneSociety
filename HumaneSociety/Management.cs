@@ -23,6 +23,9 @@ namespace HumaneSociety
         List<char> zipCodes = new List<char>();
         List<char> states = new List<char>();
 
+        //Add this to database later.
+        public string employeePassWord = "1234";
+
         public Management()
         {
             humaneSocietyData = new HumaneSocietyDatabaseDataSet();

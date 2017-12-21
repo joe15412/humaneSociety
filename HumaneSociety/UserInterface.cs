@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 namespace HumaneSociety
 {
 
-    public class UserInterFace
+    public class UserInterface
 
     //employee or costumer
     {
+        public UserInterface()
+        {
 
+        }
         public void Welcome()
         {
             Console.WriteLine("Welcome to the Humane Society!");
@@ -30,12 +33,28 @@ namespace HumaneSociety
             Console.WriteLine("Are you a");
             Console.WriteLine("1: New User?");
             Console.WriteLine("2: Returning User?");
-            Console.WriteLine("3: Guest?");
+            //Console.WriteLine("3: Guest?");
+        }
+        public void DisplayEmployeeComfirmation()
+        {
+            Console.WriteLine("Please enter your employee certification password.");
         }
         //add name
         public void DisplayUserFirstNameOption()
         {
             Console.WriteLine("Please enter Your First Name");
+        }
+        public void DisplayUserNameCheck(string userName)
+        {
+            Console.WriteLine("Your current username is " + userName + "." + Environment.NewLine + "Would you like to:" + Environment.NewLine + "1) Keep this User Name" + Environment.NewLine + "2) Change your User Name");
+        }
+        public void DisplayUserFirstNameCheck(string firstName)
+        {
+            Console.WriteLine("Your current first name is " + firstName + "." + Environment.NewLine + "Would you like to:" + Environment.NewLine + "1) Keep this first name" + Environment.NewLine + "2) Change your first name");
+        }
+        public void DisplayUserLastNameCheck(string lastName)
+        {
+            Console.WriteLine("Your current last name is " + lastName + "." + Environment.NewLine + "Would you like to:" + Environment.NewLine + "1) Keep this last name" + Environment.NewLine + "2) Change your last name");
         }
         public void DisplayUserLastNameOption()
         {
