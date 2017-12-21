@@ -17,8 +17,11 @@ namespace HumaneSociety
         List<char> addresses = new List<char>();
         List<char> genders = new List<char>();
         List<char> phoneNumbers = new List<char>();
-
-
+        List<char> addressNumbers = new List<char>();
+        List<char> streets = new List<char>();
+        List<char> cities = new List<char>();
+        List<char> zipCodes = new List<char>();
+        List<char> states = new List<char>();
 
         public Management()
         {
@@ -73,19 +76,85 @@ namespace HumaneSociety
                          where x == Convert.ToChar(userInput)
                          select x).ToList();
         }
-        bool CheckAddress(string userInput)
+        //bool CheckAddress(string userInput)
+        //{
+        //    bool AddressCreationAllowed = CheckList(addresses);
+        //    return AddressCreationAllowed;
+        //    // this will have to go more in depth since there are several foreign keys
+        //}
+        //void FindAddress(string userInput)
+        //{
+        //    addresses.Clear();
+        //    addresses = (from x in humaneSocietyData.PassWords.Namespace
+        //                 where x == Convert.ToChar(userInput)
+        //                 select x).ToList();
+        //}
+        void FindCity(string userInput)
         {
-            bool AddressCreationAllowed = CheckList(addresses);
-            return AddressCreationAllowed;
-            // this will have to go more in depth since there are several foreign keys
-        }
-        void FindAddress(string userInput)
-        {
-            addresses.Clear();
-            addresses = (from x in humaneSocietyData.PassWords.Namespace
+            cities.Clear();
+            cities = (from x in humaneSocietyData.Cities.Namespace
                          where x == Convert.ToChar(userInput)
                          select x).ToList();
         }
+        bool CheckCities(string userInput)
+        {
+            bool CityCeationAllowed = CheckList(cities);
+            return CityCeationAllowed;
+            // this will have to go more in depth since there are several foreign keys
+        }
+        void FindState(string userInput)
+        {
+            states.Clear();
+            states = (from x in humaneSocietyData.States.Namespace
+                      where x == Convert.ToChar(userInput)
+                      select x).ToList();
+        }
+        bool CheckStates(string userInput)
+        {
+            bool StateCeationAllowed = CheckList(states);
+            return StateCeationAllowed;
+            // this will have to go more in depth since there are several foreign keys
+        }
+        void FindZipCode(string userInput)
+        {
+            zipCodes.Clear();
+            zipCodes = (from x in humaneSocietyData.ZipCodes.Namespace
+                      where x == Convert.ToChar(userInput)
+                      select x).ToList();
+        }
+        bool CheckZipCodes(string userInput)
+        {
+            bool ZipCodeCeationAllowed = CheckList(zipCodes);
+            return ZipCodeCeationAllowed;
+            // this will have to go more in depth since there are several foreign keys
+        }
+
+        //void FindStreet(string userInput)
+        //{
+        //    streets.Clear();
+        //    streets = (from x in humaneSocietyData.Streets.Namespace
+        //                where x == Convert.ToChar(userInput)
+        //                select x).ToList();
+        //}
+        //bool CheckStreets(string userInput)
+        //{
+        //    bool StreetCeationAllowed = CheckList(streets);
+        //    return StreetCeationAllowed;
+        //    // this will have to go more in depth since there are several foreign keys
+        //}
+        //void FindAddressNumber(string userInput)
+        //{
+        //    addressNumbers.Clear();
+        //    addressNumbers = (from x in humaneSocietyData.Address_Numbers.Namespace
+        //               where x == Convert.ToChar(userInput)
+        //               select x).ToList();
+        //}
+        //bool CheckAddressNumber(string userInput)
+        //{
+        //    bool AddressNumberCeationAllowed = CheckList(addressNumbers);
+        //    return AddressNumberCeationAllowed;
+        //}
+
         bool CheckGender(string userInput)
         {
             bool genderCreationAllowed = CheckList(genders);
@@ -110,13 +179,14 @@ namespace HumaneSociety
                             where x == Convert.ToChar(userInput)
                             select x).ToList();
         }
-        int AddUser(string userNameInput, string passWordInput, string AddressInput, string genderInput,string phoneNumberInput)
+        int AddUser(string userNameInput, string passWordInput, string genderInput,string phoneNumberInput, string cityInput, string stateInput, string zipCodeInput, string streetInput, string addressNumberInput)
         {
             HumaneSocietyDatabaseDataSet.UsersRow newUsersRow = humaneSocietyData.Users.NewUsersRow();
             newUsersRow.UserName_ID = AddUserNameID(userNameInput);
             newUsersRow.PassWord_ID = AddPassWordID(passWordInput);
             newUsersRow.Gender_ID = AddGenderID(genderInput);
             newUsersRow.Phone_Number_ID = AddPhoneNumberID(phoneNumberInput);
+            newUsersRow.Address_ID = AddAddress(cityInput,stateInput,zipCodeInput,streetInput, addressNumberInput);
             return newUsersRow.User_ID;
         }
         int ReplaceUserName(int userID, string userNameInput)
@@ -233,5 +303,88 @@ namespace HumaneSociety
                 return phoneNumbers[0];
             }
         }
+        int AddAddress(string cityInput, string stateInput, string zipCodeInput, string streetInput, string addressNumberInput)
+        {
+            HumaneSocietyDatabaseDataSet.AddressesRow newAddressesRow = humaneSocietyData.Addresses.NewAddressesRow();
+                newAddressesRow.City_ID = AddCityID(cityInput);
+                newAddressesRow.State_ID = AddStateID(stateInput);
+                newAddressesRow.ZipCode_ID = AddZipCodeID(zipCodeInput);
+                //newAddressesRow.Street_ID = AddStreetID(streetInput);
+                //newAddressesRow.Address_Number_ID = AddAddressNumberID(addressNumberInput);
+                return newAddressesRow.Address_ID;
+        }
+        int AddCityID(string cityInput)
+        {
+            if (CheckCities(cityInput) == true)
+            {
+                HumaneSocietyDatabaseDataSet.CitiesRow newCitiesRow = humaneSocietyData.Cities.NewCitiesRow();
+                newCitiesRow.City_Name = cityInput;
+                return newCitiesRow.City_ID;
+            }
+            else
+            {
+                FindCity(cityInput);
+                return cities[0];
+            }
+
+        }
+
+        int AddStateID(string stateInput)
+        {
+            if (CheckStates(stateInput) == true)
+            {
+                HumaneSocietyDatabaseDataSet.StatesRow newStatesRow = humaneSocietyData.States.NewStatesRow();
+                newStatesRow.State_Name = stateInput;
+                return newStatesRow.State_ID;
+            }
+            else
+            {
+                FindCity(stateInput);
+                return cities[0];
+            }
+
+        }
+        int AddZipCodeID(string zipCodeInput)
+        {
+            if (CheckZipCodes(zipCodeInput) == true)
+            {
+                HumaneSocietyDatabaseDataSet.ZipCodesRow newZipCodesRow = humaneSocietyData.ZipCodes.NewZipCodesRow();
+                newZipCodesRow.ZipCode_Number = zipCodeInput;
+                return newZipCodesRow.ZipCode_ID;
+            }
+            else
+            {
+                FindZipCode(zipCodeInput);
+                return zipCodes[0];
+            }
+        }
+        //int AddStreetID(string streetInput)
+        //{
+        //    if (CheckStreets(streetInput) == true)
+        //    {
+        //        HumaneSocietyDatabaseDataSet.StreetsRow newStreetsRow = humaneSocietyData.Streets.NewStreetsRow();
+        //        newStreetsRow.Streets_Name = streetInput;
+        //        return newStreetsRow.Streets_ID;
+        //    }
+        //    else
+        //    {
+        //        FindStreet(streetInput);
+        //        return streets[0];
+        //    }
+        //}
+        //int AddAddressNumberID(string addressNumberInput)
+        //{
+        //    if (CheckAddressNumber(addressNumberInput) == true)
+        //    {
+        //        HumaneSocietyDatabaseDataSet.Address_NumbersRow newAddressNumbersRow = humaneSocietyData.Address_Numbers.NewAddress_NumbersRow();
+        //        newAddressNumbersRow.Address_Number = addressNumberInput;
+        //        return newAddressNumbersRow.Address_Number_ID; ;
+        //    }
+        //    else
+        //    {
+        //        FindAddressNumber(addressNumberInput);
+        //        return addressNumbers[0];
+        //    }
+        //}
     }
 }
