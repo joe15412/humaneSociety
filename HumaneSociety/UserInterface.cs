@@ -66,15 +66,39 @@ namespace HumaneSociety
             Console.WriteLine("Please enter your password");
         }
 
-        public void employeeAddAnimal()
+        public void EmployeeAddAnimal()
         {
             Console.WriteLine("Do you want to add a new animal?");
         }
-        public void employeeRemoveAnimal()
+        public void AddAnimalType()
+        {
+            Console.WriteLine("What type of Animal do you want to add?");
+        }
+        public void AddAnimalName()
+        {
+            Console.WriteLine("What is there name?");
+        }
+        public void AddAnimalGender()
+        {
+            Console.WriteLine("Is the animal");
+            Console.WriteLine("1: Male");
+            Console.WriteLine("2: Female");
+        }
+        public void AddAnimalBreed()
+        {
+            Console.WriteLine("What is the Animals Breed?");
+
+        }
+        public void AddAnimalPrice()
+        {
+            Console.WriteLine("What is the Animal Price?");
+        }
+        public void EmployeeRemoveAnimal()
         {
             Console.WriteLine("Do you want to remove an animal that was adopted");
 
         }
+        
 
         public void userSelectAnimal()
         {
