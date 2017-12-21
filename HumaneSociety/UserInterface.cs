@@ -29,8 +29,9 @@ namespace HumaneSociety
         public void DisplayReturningUserOption()
         {
             Console.WriteLine("Are you a");
-            Console.WriteLine("1:new user");
-            Console.WriteLine("2: returning user?");
+            Console.WriteLine("1: New User?");
+            Console.WriteLine("2: Returning User?");
+            Console.WriteLine("3: Guest?");
         }
 
         public void DisplayUserFirstNameOption()
@@ -51,7 +52,7 @@ namespace HumaneSociety
         }
         public void DisplayUserEmailInputOption()
         {
-            Console.WriteLine("Please enter your email");
+            Console.WriteLine("Please enter your email..");
         }
         public void DisplayUserPhoneNumberInputOption()
         {
@@ -93,14 +94,15 @@ namespace HumaneSociety
         {
             Console.WriteLine("What is the Animal Price?");
         }
+        public void AddAnimalColor()
+        {
+            Console.WriteLine("What color is the animal");
+        }
         public void EmployeeRemoveAnimal()
         {
             Console.WriteLine("Do you want to remove an animal that was adopted");
-
         }
-        
-
-        public void userSelectAnimal()
+        public void UserSelectAnimal()
         {
             Console.WriteLine("What type of animal are you looking for?");
             Console.WriteLine("1: Dog");
@@ -110,7 +112,7 @@ namespace HumaneSociety
             Console.WriteLine("5: Ferrets");
             Console.WriteLine("6: Rabbits");
 
-            // in cliwnt, we will match the pick to save what their choice was. Then we will take the info for later UIs
+            // in client, we will match the pick to save what their choice was. Then we will take the info for later UIs
         }
 
         // for(int i ; i < animal.attributes.count; i++) { cw"i + ")" + animal.Attributes[i] "."
@@ -123,19 +125,16 @@ namespace HumaneSociety
             Console.WriteLine("4: Size");
             Console.WriteLine("5: Gender");
             Console.WriteLine("6: Price");
-           //UI.DisplaySearchOptions(this)
-
+            //UI.DisplaySearchOptions(this)
         }
-
-
-        public void AdoptInformation()
+         public void AdoptInformation()
         {
 
             Console.WriteLine("Do you want information on adopting this animal?");
             Console.WriteLine("1: Yes");
             Console.WriteLine("2: No");
             Console.WriteLine("3: Search again");
-            Console.WriteLine("4: Start Over");
+            Console.WriteLine("4: Start Over"); 
         }
     }
 }          
