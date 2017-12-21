@@ -86,6 +86,7 @@ namespace HumaneSociety
         public void DisplayZipCode()
         {
             Console.WriteLine("What is your Zip Code?");
+        }
         public void EmployeeAddAnimal()
         {
             Console.WriteLine("Do you want to add a new animal?");
