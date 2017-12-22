@@ -12,7 +12,7 @@ namespace HumaneSociety
     {
         HumaneSocietyDatabaseDataSet humaneSocietyData;
         List<int> userNameIDs = new List<int>();
-        List<char> userNames = new List<char>();
+        Queue<string> userNames = new Queue<string>();
         List<char> passWords = new List<char>();
         List<char> addresses = new List<char>();
         List<char> genders = new List<char>();
@@ -38,10 +38,19 @@ namespace HumaneSociety
         void FindUserName(string userInput )
         {
             userNames.Clear();
-            userNames = (from x in humaneSocietyData.UserNames.User_NameColumn.Namespace // need to fix this
-                         where x == Convert.ToChar(userInput)
-                         select x).ToList();
+            var results = (from x in humaneSocietyData.UserNames// need to fix this
+                         where x.User_Name == userInput
+                         select x.User_Name).ToList();
+            foreach (string result in results)
+            {
+                userNames.Enqueue(result);
+            }
         }
+        //void FindUserName2(string userInput)
+        //{
+        //    var matchedUserName = humaneSocietyData.UserNames.FindByUserName_ID(userInput)    Where(userName => userName.ToString() == userInput);
+
+        //}
         //void FindUserNameID(string userInput)
         //{
         //    userNameIDs.Clear();
@@ -52,10 +61,10 @@ namespace HumaneSociety
         public bool CheckUserName(string userInput)
         {
             FindUserName(userInput);
-            bool userInputCreationAllowed = CheckList(passWords);
+            bool userInputCreationAllowed = CheckList(userNames);
             return userInputCreationAllowed;
         }
-        bool CheckList(List<char> chosenList)
+        bool CheckList(Queue<string> chosenList)
         {
             if (chosenList.Count > 0)
             {
@@ -132,31 +141,31 @@ namespace HumaneSociety
             // this will have to go more in depth since there are several foreign keys
         }
 
-        //void FindStreet(string userInput)
-        //{
-        //    streets.Clear();
-        //    streets = (from x in humaneSocietyData.Streets.Namespace
-        //                where x == Convert.ToChar(userInput)
-        //                select x).ToList();
-        //}
-        //bool CheckStreets(string userInput)
-        //{
-        //    bool StreetCeationAllowed = CheckList(streets);
-        //    return StreetCeationAllowed;
-        //    // this will have to go more in depth since there are several foreign keys
-        //}
-        //void FindAddressNumber(string userInput)
-        //{
-        //    addressNumbers.Clear();
-        //    addressNumbers = (from x in humaneSocietyData.Address_Numbers.Namespace
-        //               where x == Convert.ToChar(userInput)
-        //               select x).ToList();
-        //}
-        //bool CheckAddressNumber(string userInput)
-        //{
-        //    bool AddressNumberCeationAllowed = CheckList(addressNumbers);
-        //    return AddressNumberCeationAllowed;
-        //}
+        void FindStreet(string userInput)
+        {
+            streets.Clear();
+            streets = (from x in humaneSocietyData.Streets.Namespace
+                       where x == Convert.ToChar(userInput)
+                       select x).ToList();
+        }
+        bool CheckStreets(string userInput)
+        {
+            bool StreetCeationAllowed = CheckList(streets);
+            return StreetCeationAllowed;
+            // this will have to go more in depth since there are several foreign keys
+        }
+        void FindAddressNumber(string userInput)
+        {
+            addressNumbers.Clear();
+            addressNumbers = (from x in humaneSocietyData.Address_Numbers.Namespace
+                              where x == Convert.ToChar(userInput)
+                              select x).ToList();
+        }
+        bool CheckAddressNumber(string userInput)
+        {
+            bool AddressNumberCeationAllowed = CheckList(addressNumbers);
+            return AddressNumberCeationAllowed;
+        }
 
         bool CheckGender(string userInput)
         {
