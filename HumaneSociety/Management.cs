@@ -38,7 +38,7 @@ namespace HumaneSociety
         void FindUserName(string userInput )
         {
             userNames.Clear();
-            userNames = (from x in humaneSocietyData.UserNames.User_NameColumn.Namespace
+            userNames = (from x in humaneSocietyData.UserNames.User_NameColumn.Namespace // need to fix this
                          where x == Convert.ToChar(userInput)
                          select x).ToList();
         }
@@ -49,7 +49,7 @@ namespace HumaneSociety
         //                 where x == Convert.ToInt32(userInput)
         //                 select x).ToList();
         //}
-        bool CheckUserName(string userInput)
+        public bool CheckUserName(string userInput)
         {
             FindUserName(userInput);
             bool userInputCreationAllowed = CheckList(passWords);
@@ -182,7 +182,7 @@ namespace HumaneSociety
                             where x == Convert.ToChar(userInput)
                             select x).ToList();
         }
-        int AddUser(string userNameInput, string passWordInput, string genderInput,string phoneNumberInput, string cityInput, string stateInput, string zipCodeInput, string streetInput, string addressNumberInput)
+        public int AddUser(string userNameInput, string passWordInput, string genderInput,string phoneNumberInput, string cityInput, string stateInput, string zipCodeInput, string streetInput, string addressNumberInput)
         {
             HumaneSocietyDatabaseDataSet.UsersRow newUsersRow = humaneSocietyData.Users.NewUsersRow();
             newUsersRow.UserName_ID = AddUserNameID(userNameInput);

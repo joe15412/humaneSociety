@@ -70,14 +70,39 @@ namespace HumaneSociety
         {
             Console.WriteLine("Please create a password");
         }
-        //add email and phone number
-        public void DisplayUserEmailInputOption()
+        public void DisplayCheckUserPassWord()
         {
-            Console.WriteLine("Please enter your email..");
+            Console.WriteLine("Please re-write your password.");
+        }
+        public void DisplayIncorrectPasswordMatch()
+        {
+            Console.WriteLine("The passwords you have written do not match. Please try again.");
+        }
+        //add email and phone number
+        //public void DisplayUserEmailInputOption()
+        //{
+        //    Console.WriteLine("Please enter your email..");
+        //}
+        public void DisplayGenderOptions()
+        {
+            Console.WriteLine("What is your gender?");
+        }
+
+        public void DisplayIncorrectOption()
+        {
+            Console.WriteLine("What you have chosen is not an option. Please try again.");
+        }
+        public void DisplayGenderCheck(string userInput)
+        {
+            Console.WriteLine("The current gender you have chosen is " + userInput + "." + Environment.NewLine + "Is this correct?" + Environment.NewLine + "1)Yes" + Environment.NewLine + "2)No");
         }
         public void DisplayUserPhoneNumberInputOption()
         {
             Console.WriteLine("Please enter Your phone number");
+        }
+        public void DisplayUserPhoneNumberCheck(string userInput)
+        {
+            Console.WriteLine("Your current phone number is " + userInput + "." + Environment.NewLine + "Is this correct?" + Environment.NewLine + "1)Yes" + Environment.NewLine + "2)No");
         }
         public void DisplayUserNameInputOption()
         {
@@ -108,6 +133,45 @@ namespace HumaneSociety
         public void DisplayZipCode()
         {
             Console.WriteLine("What is your Zip Code?");
+        }
+        public void DisplayZipCodeCheck(string userInput)
+        {
+            Console.WriteLine("Your current zip code is " + userInput + "." + Environment.NewLine + "Is this correct?" + Environment.NewLine + "1)Yes" + Environment.NewLine + "2)No");
+        }
+        public void DisplayStateCheck(string userInput)
+        {
+            Console.WriteLine("Your current state is" + userInput + "." + Environment.NewLine + "Is this correct?" + Environment.NewLine + "1)Yes" + Environment.NewLine + "2)No");
+        }
+        public void DisplayCityCheck(string userInput)
+        {
+            Console.WriteLine("Your current city is" + userInput + "." + Environment.NewLine + "Is this correct?" + Environment.NewLine + "1)Yes" + Environment.NewLine + "2)No");
+
+        }
+        public void DisplayStreet()
+        {
+            Console.WriteLine("What is your street name?");
+        }
+        public void DisplayStreetCheck(string userInput)
+        {
+            Console.WriteLine("Your current street name is" + userInput + "." + Environment.NewLine + "Is this correct?" + Environment.NewLine + "1)Yes" + Environment.NewLine + "2)No");
+
+        }
+        public void DisplayUsedUserName()
+        {
+            Console.WriteLine("The user name you have chosen is already in use." + Environment.NewLine + "Please choose a different user name.");
+        }
+        public void DisplayAddressNumber()
+        {
+            Console.WriteLine("What is address number?");
+        }
+        public void DisplayAddressNumberCheck(string userInput)
+        {
+            Console.WriteLine("Your current address number is" + userInput + "." + Environment.NewLine + "Is this correct?" + Environment.NewLine + "1)Yes" + Environment.NewLine + "2)No");
+
+        }
+        public void DisplayCheckToGoBack()
+        {
+            Console.WriteLine("You have completed your account creation." + Environment.NewLine + "Please select any of the follow:" +Environment.NewLine + "1) UserName" + Environment.NewLine + "2) First Name" + Environment.NewLine + "3) Last Name" + Environment.NewLine + "4) PassWord" + Environment.NewLine + "5) Gender" + Environment.NewLine + "6) Phone Number" + Environment.NewLine + "7) Zip Code" + Environment.NewLine + "8) State" + Environment.NewLine + "9) City" + Environment.NewLine + "10) Street" + Environment.NewLine + "11) Address Number" + Environment.NewLine + "12) Restart account creation" +Environment.NewLine + "13) Log in with your new account");
         }
         //employee adds animal
         public void EmployeeAddAnimal()

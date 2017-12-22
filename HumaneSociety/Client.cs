@@ -17,8 +17,13 @@ namespace HumaneSociety
             // will change
         string userName;
         string passWord;
-        string Address;
-        string Gender;
+        string state;
+        string city;
+        string zipcode;
+        string street;
+        string addressNumber;
+        string gender;
+        string phoneNumber;
         string firstName;
         string lastName;
         bool isEmployee;
@@ -30,7 +35,6 @@ namespace HumaneSociety
         }
         public void RunClient()
         {
-            RunLogIn();
             RunLogIn();
             if(isReturningUser == false)
             {
@@ -45,13 +49,34 @@ namespace HumaneSociety
             if (isEmployee == true)
             {
              CheckEmployeePassWord();
+
             }
         }
         public void CreateAccount()
         {
             SetUserName();
+            CheckUserName();
             SetUserFirstName();
+            CheckUserFirstName();
             SetUserLastName();
+            CheckUserLastName();
+            SetPassWord();
+            CheckPassword();
+            SetGender();
+            CheckGenderChoice();
+            SetPhoneNumber();
+            CheckPhoneNumber();
+            SetZipCode();
+            CheckZipCode();
+            SetState();
+            CheckState();
+            SetCity();
+            CheckCity();
+            SetStreet();
+            CheckStreet();
+            SetAddressNumber();
+            CheckAddressNumber();
+            CheckAcocountCreation();
         }
         void CheckIfEmployee()
         {
@@ -94,6 +119,15 @@ namespace HumaneSociety
         {
             UI.DisplaySetUserNameOption();
             userName = UI.GetUserInput();
+            CheckDabataseForUserName();
+        }
+        void CheckDabataseForUserName()
+        {
+            if (management.CheckUserName(userName) == false)
+            {
+                UI.DisplayUsedUserName();
+                SetUserName();
+            }
         }
         void CheckUserName()
         {
@@ -153,7 +187,217 @@ namespace HumaneSociety
                 CheckUserLastName();
             }
         }
+        void SetPassWord()
+        {
+            UI.DisplaySetUserPassWordOption();
+            passWord = UI.GetUserInput();
+        }
+        void CheckPassword()
+        {
+            UI.DisplayCheckUserPassWord();
+            if (UI.GetUserInput() != passWord)
+            {
+                UI.DisplayIncorrectPasswordMatch();
+                SetPassWord();
+            }
+        }
+        void SetGender()
+        {
+            UI.DisplayGenderOptions();
+            gender = UI.GetUserInput();
+        }
+        void CheckGenderChoice()
+        {
+            UI.DisplayGenderCheck(gender);
+            if (UI.GetUserInput() == "1")
+            {
+            }
+            else if (UI.GetUserInput() == "2")
+            {
+                SetGender();
+            }
+            else
+            {
+                CheckGenderChoice();
+            }
+        }
+        public void SetPhoneNumber()
+        {
+            UI.DisplayUserPhoneNumberInputOption();
+            phoneNumber = UI.GetUserInput();
+        }
+        public void CheckPhoneNumber()
+        {
+            UI.DisplayUserPhoneNumberCheck(phoneNumber);
+            if (UI.GetUserInput() == "1")
+            {
+            }
+            else if (UI.GetUserInput() == "2")
+            {
+                SetPhoneNumber();
+            }
+            else
+            {
+                CheckPhoneNumber();
+            }
+        }
+        public void SetZipCode()
+        {
+            UI.DisplayZipCode();
+            zipcode = UI.GetUserInput();
+        }
+        public void CheckZipCode()
+        {
+            UI.DisplayZipCodeCheck(zipcode);
+            if (UI.GetUserInput() == "1")
+            {
+            }
+            else if (UI.GetUserInput() == "2")
+            {
+                SetZipCode();
+            }
+            else
+            {
+                CheckZipCode();
+            }
+        }
+        public void SetState()
+        {
+            UI.DisplayStateName();
+            state = UI.GetUserInput();
+        }
+        public void CheckState()
+        {
+            UI.DisplayStateCheck(state);
+            if (UI.GetUserInput() == "1")
+            {
+            }
+            else if (UI.GetUserInput() == "2")
+            {
+                SetState();
+            }
+            else
+            {
+                CheckState();
+            }
+        }
+        public void SetCity()
+        {
+            UI.DisplayCityName();
+            city = UI.GetUserInput();
+        }
+        public void CheckCity()
+        {
+            UI.DisplayCityCheck(city);
+            if (UI.GetUserInput() == "1")
+            {
+            }
+            else if (UI.GetUserInput() == "2")
+            {
+                SetCity();
+            }
+            else
+            {
+                CheckCity();
+            }
+        }
+        public void SetStreet()
+        {
+            UI.DisplayStreet();
+            street = UI.GetUserInput();
+        }
+        public void CheckStreet()
+        {
+            UI.DisplayStreetCheck(street);
+            if (UI.GetUserInput() == "1")
+            {
+            }
+            else if (UI.GetUserInput() == "2")
+            {
+                SetStreet();
+            }
+            else
+            {
+                CheckStreet();
+            }
+        }
+        public void SetAddressNumber()
+        {
+            UI.DisplayAddressNumber();
+            addressNumber = UI.GetUserInput();
+        }
+        public void CheckAddressNumber()
+        {
+            UI.DisplayAddressNumberCheck(addressNumber);
+            if (UI.GetUserInput() == "1")
+            {
+            }
+            else if (UI.GetUserInput() == "2")
+            {
+                SetAddressNumber();
+            }
+            else
+            {
+                CheckAddressNumber();
+            }
 
+        }
+        public void CheckAcocountCreation()
+        {
+            UI.DisplayCheckToGoBack();
+            switch (UI.GetUserInput())
+            {
+                case "1":
+                    SetUserFirstName();
+                    break;
+                case "2":
+                    SetUserFirstName();
+                    break;
+                case "3":
+                    SetUserLastName();
+                    break;
+                case "4":
+                    SetPassWord();
+                    break;
+                case "5":
+                    SetGender();
+                    break;
+                case "6":
+                    SetPhoneNumber();
+                    break;
+                case "7":
+                    SetZipCode();
+                    break;
+                case "8":
+                    SetState();
+                    break;
+                case "9":
+                    SetCity();
+                    break;
+                case "10":
+                    SetStreet();
+                    break;
+                case "11":
+                    SetAddressNumber();
+                    break;
+                case "12":
+                    CreateAccount();
+                    break;
+                case "13":
+                    CheckDabataseForUserName();
+                    SendNewAccountInformation();
+                    break;
+                default:
+                    CheckAcocountCreation();
+                    break;
+            }
+            CheckAcocountCreation();
+        }
+        public void SendNewAccountInformation()
+        {
+            userID = management.AddUser(userName, passWord, gender, phoneNumber, city, state, zipcode, street, addressNumber);
+            Console.WriteLine(userID);
+        }
 
 
 
