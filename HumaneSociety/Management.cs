@@ -10,19 +10,18 @@ namespace HumaneSociety
 {
     class Management
     {
-        DataSetHs datasetHS;
         HumaneSocietyDatabaseDataSet humaneSocietyData;
-        List<int> userNameIDs = new List<int>();
+        Queue<int> userNameIDs = new Queue <int>();
         Queue<string> userNames = new Queue<string>();
-        List<char> passWords = new List<char>();
-        List<char> addresses = new List<char>();
-        List<char> genders = new List<char>();
-        List<char> phoneNumbers = new List<char>();
-        List<char> addressNumbers = new List<char>();
-        List<char> streets = new List<char>();
-        List<char> cities = new List<char>();
-        List<char> zipCodes = new List<char>();
-        List<char> states = new List<char>();
+        Queue<string> passWords = new Queue<string>();
+        Queue<string> addresses = new Queue<string>();
+        Queue<string> genders = new Queue<string>();
+        Queue<string> phoneNumbers = new Queue<string>();
+        Queue<string> addressNumbers = new Queue<string>();
+        Queue<string> streets = new Queue<string>();
+        Queue<string> cities = new Queue<string>();
+        Queue<string> zipCodes = new Queue<string>();
+        Queue<string> states = new Queue<string>();
 
         //Add this to database later.
         public string employeePassWord = "1234";
@@ -42,7 +41,7 @@ namespace HumaneSociety
         void FindUserName(string userInput )
         {
             userNames.Clear();
-            var results = (from x in humaneSocietyData.UserNames// need to fix this
+            var results = (from x in humaneSocietyData.UserNames
                          where x.User_Name == userInput
                          select x.User_Name).ToList();
             foreach (string result in results)
@@ -50,6 +49,21 @@ namespace HumaneSociety
                 userNames.Enqueue(result);
             }
         }
+
+        //void FindUserName2(string userInput)
+        //{
+        //    var matchedUserName = humaneSocietyData.UserNames.FindByUserName_ID(userInput)    Where(userName => userName.ToString() == userInput);
+
+        //}
+        //void FindUserNameID(string userInput)
+        //{
+        //    userNameIDs.Clear();
+        //    userNameIDs = (from x in humaneSocietyData.Users.FindByUser_ID()
+        //                 where x == Convert.ToInt32(userInput)
+        //                 select x).ToList();
+        //}
+
+        
         public bool CheckUserName(string userInput)
         {
             FindUserName(userInput);
@@ -69,11 +83,12 @@ namespace HumaneSociety
         }
         bool CheckPassWord(string userInput)
         {
-            FindPassword(userInput);
+            FindPasswords(userInput);
             bool passWordCreationAllowed = CheckList(passWords);
             return passWordCreationAllowed;
         }
-        void FindPassword(string userInput)
+
+        void FindPasswords(string userInput)
         {
             passWords.Clear();
             var results = (from x in humaneSocietyData.PassWords
@@ -97,12 +112,17 @@ namespace HumaneSociety
         //                 where x == Convert.ToChar(userInput)
         //                 select x).ToList();
         //}
+
         void FindCity(string userInput)
         {
             cities.Clear();
-            cities = (from x in humaneSocietyData.Cities
+            var results = (from x in humaneSocietyData.Cities
                          where x.City_Name == userInput
                          select x.City_Name).ToList();
+            foreach (string result in results)
+            {
+                cities.Enqueue(result);
+            }
         }
         bool CheckCities(string userInput)
         {
@@ -113,9 +133,13 @@ namespace HumaneSociety
         void FindState(string userInput)
         {
             states.Clear();
-            states = (from x in humaneSocietyData.States.Namespace
-                      where x == Convert.ToChar(userInput)
-                      select x).ToList();
+           var results = (from x in humaneSocietyData.States
+                      where x.State_Name == userInput
+                      select x.State_Name).ToList();
+            foreach (string result in results)
+            {
+                states.Enqueue(result);
+            }
         }
         bool CheckStates(string userInput)
         {
@@ -125,10 +149,13 @@ namespace HumaneSociety
         }
         void FindZipCode(string userInput)
         {
-            zipCodes.Clear();
-            zipCodes = (from x in humaneSocietyData.ZipCodes.Namespace
-                      where x == Convert.ToChar(userInput)
-                      select x).ToList();
+           var results = (from x in humaneSocietyData.ZipCodes
+                      where x.ZipCode_Number == userInput
+                      select x.ZipCode_Number).ToList();
+            foreach (string result in results)
+            {
+                zipCodes.Enqueue(result);
+            }
         }
         bool CheckZipCodes(string userInput)
         {
@@ -140,9 +167,13 @@ namespace HumaneSociety
         void FindStreet(string userInput)
         {
             streets.Clear();
-            streets = (from x in humaneSocietyData.Streets.Namespace
-                       where x == Convert.ToChar(userInput)
-                       select x).ToList();
+            var results = (from x in humaneSocietyData.Streets
+                       where x.Street_Name == userInput
+                       select x.Street_Name).ToList();
+            foreach (string result in results)
+            {
+                streets.Enqueue(result);
+            }
         }
         bool CheckStreets(string userInput)
         {
@@ -153,9 +184,13 @@ namespace HumaneSociety
         void FindAddressNumber(string userInput)
         {
             addressNumbers.Clear();
-            addressNumbers = (from x in humaneSocietyData.Address_Numbers.Namespace
-                              where x == Convert.ToChar(userInput)
-                              select x).ToList();
+            var results  = (from x in humaneSocietyData.Address_Numbers
+                              where x.Address_Number == userInput
+                              select x.Address_Number).ToList();
+            foreach (string result in results)
+            {
+                addressNumbers.Enqueue(result);
+            }
         }
         bool CheckAddressNumber(string userInput)
         {
@@ -171,9 +206,13 @@ namespace HumaneSociety
         void FindGender(string userInput)
         {
             genders.Clear();
-            genders = (from x in humaneSocietyData.Genders.Namespace
-                       where x == Convert.ToChar(userInput)
-                       select x).ToList();
+            var results = (from x in humaneSocietyData.Genders
+                       where x.Gender_Name == userInput
+                       select x.Gender_Name).ToList();
+            foreach (string result in results)
+            {
+                genders.Enqueue(result);
+            }
         }
         bool CheckPhoneNumber(string userInput)
         {
@@ -183,9 +222,13 @@ namespace HumaneSociety
         void FindPhoneNumber(string userInput)
         {
             phoneNumbers.Clear();
-            phoneNumbers = (from x in humaneSocietyData.Phone_Numbers.Namespace
-                            where x == Convert.ToChar(userInput)
-                            select x).ToList();
+            var results = (from x in humaneSocietyData.Phone_Numbers
+                            where x.Phone_Number == userInput
+                            select x.Phone_Number).ToList();
+            foreach (string result in results)
+            {
+                phoneNumbers.Enqueue(result);
+            }
         }
         public int AddUser(string userNameInput, string passWordInput, string genderInput,string phoneNumberInput, string cityInput, string stateInput, string zipCodeInput, string streetInput, string addressNumberInput)
         {
@@ -206,11 +249,6 @@ namespace HumaneSociety
                 currentUserRow.UserName_ID = newUserNameID;
                 return currentUserRow.UserName_ID;
                
-            }
-            else
-            {
-                FindUserName(userNameInput);
-                return userNames[0];
             }
         }
         int ReplacePassWord(int userID, string passWordInput)
