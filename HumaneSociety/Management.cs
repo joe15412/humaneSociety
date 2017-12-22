@@ -13,15 +13,15 @@ namespace HumaneSociety
         HumaneSocietyDatabaseDataSet humaneSocietyData;
         Queue<int> userNameIDs = new Queue <int>();
         Queue<string> userNames = new Queue<string>();
-        Queue<char> passWords = new Queue<char>();
-        Queue<char> addresses = new Queue<char>();
-        Queue<char> genders = new Queue<char>();
-        Queue<char> phoneNumbers = new Queue<char>();
-        Queue<char> addressNumbers = new Queue<char>();
-        Queue<char> streets = new Queue<char>();
-        Queue<char> cities = new Queue<char>();
-        Queue<char> zipCodes = new Queue<char>();
-        Queue<char> states = new Queue<char>();
+        Queue<string> passWords = new Queue<string>();
+        Queue<string> addresses = new Queue<string>();
+        Queue<string> genders = new Queue<string>();
+        Queue<string> phoneNumbers = new Queue<string>();
+        Queue<string> addressNumbers = new Queue<string>();
+        Queue<string> streets = new Queue<string>();
+        Queue<string> cities = new Queue<string>();
+        Queue<string> zipCodes = new Queue<string>();
+        Queue<string> states = new Queue<string>();
 
         //Add this to database later.
         public string employeePassWord = "1234";
