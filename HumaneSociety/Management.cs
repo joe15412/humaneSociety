@@ -11,17 +11,17 @@ namespace HumaneSociety
     class Management
     {
         HumaneSocietyDatabaseDataSet humaneSocietyData;
-        List<int> userNameIDs = new List<int>();
+        Queue<int> userNameIDs = new Queue <int>();
         Queue<string> userNames = new Queue<string>();
-        List<char> passWords = new List<char>();
-        List<char> addresses = new List<char>();
-        List<char> genders = new List<char>();
-        List<char> phoneNumbers = new List<char>();
-        List<char> addressNumbers = new List<char>();
-        List<char> streets = new List<char>();
-        List<char> cities = new List<char>();
-        List<char> zipCodes = new List<char>();
-        List<char> states = new List<char>();
+        Queue<char> passWords = new Queue<char>();
+        Queue<char> addresses = new Queue<char>();
+        Queue<char> genders = new Queue<char>();
+        Queue<char> phoneNumbers = new Queue<char>();
+        Queue<char> addressNumbers = new Queue<char>();
+        Queue<char> streets = new Queue<char>();
+        Queue<char> cities = new Queue<char>();
+        Queue<char> zipCodes = new Queue<char>();
+        Queue<char> states = new Queue<char>();
 
         //Add this to database later.
         public string employeePassWord = "1234";
@@ -58,6 +58,8 @@ namespace HumaneSociety
         //                 where x == Convert.ToInt32(userInput)
         //                 select x).ToList();
         //}
+
+        
         public bool CheckUserName(string userInput)
         {
             FindUserName(userInput);
@@ -77,16 +79,21 @@ namespace HumaneSociety
         }
         bool CheckPassWord(string userInput)
         {
-            FindPassword(userInput);
+            FindPasswords(userInput);
             bool passWordCreationAllowed = CheckList(passWords);
             return passWordCreationAllowed;
         }
-        void FindPassword(string userInput)
+
+        void FindPasswords(string userInput)
         {
             passWords.Clear();
-            passWords = (from x in humaneSocietyData.PassWords.Namespace
-                         where x == Convert.ToChar(userInput)
-                         select x).ToList();
+            var results = (from x in humaneSocietyData.PassWords
+                           where x.passWords == userInput
+                           select x.passWords).ToList();
+            foreach (string result in results)
+            {
+                passWords.Enqueue(result);
+            }
         }
         //bool CheckAddress(string userInput)
         //{
@@ -101,6 +108,7 @@ namespace HumaneSociety
         //                 where x == Convert.ToChar(userInput)
         //                 select x).ToList();
         //}
+        
         void FindCity(string userInput)
         {
             cities.Clear();
