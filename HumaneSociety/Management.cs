@@ -385,6 +385,30 @@ namespace HumaneSociety
             }
             return userIDs.Dequeue();
         }
+        int MatchUserIDToUserStatusID(int userIDInput)
+        {
+            var results = (from x in humaneSocietyData.Users
+                           where x.User_ID == userIDInput
+                           select x.Status_ID).ToList();
+            foreach (int result in results)
+            {
+                statusIDs.Enqueue(result);
+            }
+            return statusIDs.Dequeue();
+        }
+        public string MatchUserIDToUserStatus(int userIDInput)
+        {
+
+            var results = (from x in humaneSocietyData.EmployeeStatuses
+                           where x.EmployeeStatus_ID == MatchUserIDToUserStatusID(userIDInput)
+                           select x.Status_Name).ToList();
+            foreach (string result in results)
+            {
+                statuses.Enqueue(result);
+            }
+            return statuses.Dequeue();
+        }
+   
         public int AddUser(string userNameInput, string passWordInput, string genderInput,string phoneNumberInput, string cityInput, string stateInput, string zipCodeInput, string streetInput, string addressNumberInput, string status)
         {
             HumaneSocietyDatabaseDataSet.UsersRow newUsersRow = humaneSocietyData.Users.NewUsersRow();

@@ -32,21 +32,58 @@ namespace HumaneSociety
         {
             UI = new UserInterface();
             management = new Management();
+            // will need to send in the new management class that is intatiated in the program
         }
         public void RunClient()
         {
-            RunLogIn();
+            RunLogInChecks();
             if(isReturningUser == false)
             {
                 CreateAccount();
             }
             else
             {
-
+                LogIn();
             }
+
  
         }
-        public void RunLogIn()
+        void RunMainMenu()
+        {
+            if (statusLevel == "Employee")
+            {
+                CheckEmployeeMainMenuAnswer();
+            }
+            else
+            {
+                CheckAnimalViewAnswer();
+            }
+
+        }
+        void CheckEmployeeMainMenuAnswer()
+        {
+            UI.DisplayEmployeeOptions();
+            if (UI.GetUserInput() == "1")
+            {
+                CheckAnimalViewAnswer();
+            }
+            else if (UI.GetUserInput() == "2")
+            {
+                AddNewAnimal();
+            }
+            else if (UI.GetUserInput() == "3")
+            {
+                ChangeExistingAnimal();
+            }
+        }
+        void CheckAnimalViewAnswer()
+        {
+
+        }
+
+
+
+        public void RunLogInChecks()
         {
             CheckIfEmployee();
             CheckIfReturningUser();
@@ -94,6 +131,7 @@ namespace HumaneSociety
                else 
                 {
                     userID = management.MatchUserNameToUserNameID(userName);
+                    statusLevel = management.MatchUserIDToUserStatus(userID);
                 }
             }
         }
@@ -423,18 +461,6 @@ namespace HumaneSociety
             Console.WriteLine(userID);
         }
 
-
-
-        //UI.Are you a new or old user?
-
-        //If new user - ask to put information
-
-
-        //if old user= ask for username/password
-
-
-
-        //Put a password for creating a new account with employee access.
 
         // Ask if there was a nane/animalID they were searching for in the database
 

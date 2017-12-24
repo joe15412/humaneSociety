@@ -70,6 +70,8 @@ namespace HumaneSociety {
         
         private PricesDataTable tablePrices;
         
+        private Shot_StatusesDataTable tableShot_Statuses;
+        
         private SpeciesDataTable tableSpecies;
         
         private StatesDataTable tableStates;
@@ -110,6 +112,8 @@ namespace HumaneSociety {
         
         private global::System.Data.DataRelation relationFK__Animals__Price_I__208CD6FA;
         
+        private global::System.Data.DataRelation relationFK__Animals__Shot_St__46B27FE2;
+        
         private global::System.Data.DataRelation relationFK__Animals__Species__1EA48E88;
         
         private global::System.Data.DataRelation relationFK__Date_Of_B__Day_I__4CA06362;
@@ -128,7 +132,11 @@ namespace HumaneSociety {
         
         private global::System.Data.DataRelation relationFK__Users__Address_I__2EDAF651;
         
+        private global::System.Data.DataRelation relationFK__Users__First_Nam__41EDCAC5;
+        
         private global::System.Data.DataRelation relationFK__Users__Gender_ID__2FCF1A8A;
+        
+        private global::System.Data.DataRelation relationFK__Users__Last_Name__42E1EEFE;
         
         private global::System.Data.DataRelation relationFK__Users__PassWord___2DE6D218;
         
@@ -234,6 +242,9 @@ namespace HumaneSociety {
                 }
                 if ((ds.Tables["Prices"] != null)) {
                     base.Tables.Add(new PricesDataTable(ds.Tables["Prices"]));
+                }
+                if ((ds.Tables["Shot_Statuses"] != null)) {
+                    base.Tables.Add(new Shot_StatusesDataTable(ds.Tables["Shot_Statuses"]));
                 }
                 if ((ds.Tables["Species"] != null)) {
                     base.Tables.Add(new SpeciesDataTable(ds.Tables["Species"]));
@@ -505,6 +516,16 @@ namespace HumaneSociety {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Shot_StatusesDataTable Shot_Statuses {
+            get {
+                return this.tableShot_Statuses;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public SpeciesDataTable Species {
             get {
                 return this.tableSpecies;
@@ -697,6 +718,9 @@ namespace HumaneSociety {
                 if ((ds.Tables["Prices"] != null)) {
                     base.Tables.Add(new PricesDataTable(ds.Tables["Prices"]));
                 }
+                if ((ds.Tables["Shot_Statuses"] != null)) {
+                    base.Tables.Add(new Shot_StatusesDataTable(ds.Tables["Shot_Statuses"]));
+                }
                 if ((ds.Tables["Species"] != null)) {
                     base.Tables.Add(new SpeciesDataTable(ds.Tables["Species"]));
                 }
@@ -886,6 +910,12 @@ namespace HumaneSociety {
                     this.tablePrices.InitVars();
                 }
             }
+            this.tableShot_Statuses = ((Shot_StatusesDataTable)(base.Tables["Shot_Statuses"]));
+            if ((initTable == true)) {
+                if ((this.tableShot_Statuses != null)) {
+                    this.tableShot_Statuses.InitVars();
+                }
+            }
             this.tableSpecies = ((SpeciesDataTable)(base.Tables["Species"]));
             if ((initTable == true)) {
                 if ((this.tableSpecies != null)) {
@@ -936,6 +966,7 @@ namespace HumaneSociety {
             this.relationFK__Animals__Gender___19DFD96B = this.Relations["FK__Animals__Gender___19DFD96B"];
             this.relationFK__Animals__Name_ID__0D7A0286 = this.Relations["FK__Animals__Name_ID__0D7A0286"];
             this.relationFK__Animals__Price_I__208CD6FA = this.Relations["FK__Animals__Price_I__208CD6FA"];
+            this.relationFK__Animals__Shot_St__46B27FE2 = this.Relations["FK__Animals__Shot_St__46B27FE2"];
             this.relationFK__Animals__Species__1EA48E88 = this.Relations["FK__Animals__Species__1EA48E88"];
             this.relationFK__Date_Of_B__Day_I__4CA06362 = this.Relations["FK__Date_Of_B__Day_I__4CA06362"];
             this.relationFK__Date_Of_B__Month__4D94879B = this.Relations["FK__Date_Of_B__Month__4D94879B"];
@@ -945,7 +976,9 @@ namespace HumaneSociety {
             this.relationFK_First_Names = this.Relations["FK_First_Names"];
             this.relationFK_Last_Names = this.Relations["FK_Last_Names"];
             this.relationFK__Users__Address_I__2EDAF651 = this.Relations["FK__Users__Address_I__2EDAF651"];
+            this.relationFK__Users__First_Nam__41EDCAC5 = this.Relations["FK__Users__First_Nam__41EDCAC5"];
             this.relationFK__Users__Gender_ID__2FCF1A8A = this.Relations["FK__Users__Gender_ID__2FCF1A8A"];
+            this.relationFK__Users__Last_Name__42E1EEFE = this.Relations["FK__Users__Last_Name__42E1EEFE"];
             this.relationFK__Users__PassWord___2DE6D218 = this.Relations["FK__Users__PassWord___2DE6D218"];
             this.relationFK__Users__Phone_Num__30C33EC3 = this.Relations["FK__Users__Phone_Num__30C33EC3"];
             this.relationFK__Users__Status_ID__40F9A68C = this.Relations["FK__Users__Status_ID__40F9A68C"];
@@ -1006,6 +1039,8 @@ namespace HumaneSociety {
             base.Tables.Add(this.tablePhone_Numbers);
             this.tablePrices = new PricesDataTable();
             base.Tables.Add(this.tablePrices);
+            this.tableShot_Statuses = new Shot_StatusesDataTable();
+            base.Tables.Add(this.tableShot_Statuses);
             this.tableSpecies = new SpeciesDataTable();
             base.Tables.Add(this.tableSpecies);
             this.tableStates = new StatesDataTable();
@@ -1074,6 +1109,10 @@ namespace HumaneSociety {
                         this.tablePrices.Prices_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableAnimals.Price_IDColumn}, false);
             this.Relations.Add(this.relationFK__Animals__Price_I__208CD6FA);
+            this.relationFK__Animals__Shot_St__46B27FE2 = new global::System.Data.DataRelation("FK__Animals__Shot_St__46B27FE2", new global::System.Data.DataColumn[] {
+                        this.tableShot_Statuses.Shot_Status_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAnimals.Shot_Status_IDColumn}, false);
+            this.Relations.Add(this.relationFK__Animals__Shot_St__46B27FE2);
             this.relationFK__Animals__Species__1EA48E88 = new global::System.Data.DataRelation("FK__Animals__Species__1EA48E88", new global::System.Data.DataColumn[] {
                         this.tableSpecies.Species_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableAnimals.Species_IDColumn}, false);
@@ -1110,10 +1149,18 @@ namespace HumaneSociety {
                         this.tableAddresses.Address_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableUsers.Address_IDColumn}, false);
             this.Relations.Add(this.relationFK__Users__Address_I__2EDAF651);
+            this.relationFK__Users__First_Nam__41EDCAC5 = new global::System.Data.DataRelation("FK__Users__First_Nam__41EDCAC5", new global::System.Data.DataColumn[] {
+                        this.tableFirst_Names.First_Names_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUsers.First_Name_IDColumn}, false);
+            this.Relations.Add(this.relationFK__Users__First_Nam__41EDCAC5);
             this.relationFK__Users__Gender_ID__2FCF1A8A = new global::System.Data.DataRelation("FK__Users__Gender_ID__2FCF1A8A", new global::System.Data.DataColumn[] {
                         this.tableGenders.Gender_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableUsers.Gender_IDColumn}, false);
             this.Relations.Add(this.relationFK__Users__Gender_ID__2FCF1A8A);
+            this.relationFK__Users__Last_Name__42E1EEFE = new global::System.Data.DataRelation("FK__Users__Last_Name__42E1EEFE", new global::System.Data.DataColumn[] {
+                        this.tableLast_Names.Last_Names_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUsers.Last_Name_IDColumn}, false);
+            this.Relations.Add(this.relationFK__Users__Last_Name__42E1EEFE);
             this.relationFK__Users__PassWord___2DE6D218 = new global::System.Data.DataRelation("FK__Users__PassWord___2DE6D218", new global::System.Data.DataColumn[] {
                         this.tablePassWords.PassWord_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableUsers.PassWord_IDColumn}, false);
@@ -1267,6 +1314,12 @@ namespace HumaneSociety {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializePrices() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeShot_Statuses() {
             return false;
         }
         
@@ -1429,6 +1482,9 @@ namespace HumaneSociety {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void PricesRowChangeEventHandler(object sender, PricesRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void Shot_StatusesRowChangeEventHandler(object sender, Shot_StatusesRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void SpeciesRowChangeEventHandler(object sender, SpeciesRowChangeEvent e);
@@ -2378,6 +2434,8 @@ namespace HumaneSociety {
             
             private global::System.Data.DataColumn columnDate_Of_Birth_ID;
             
+            private global::System.Data.DataColumn columnShot_Status_ID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public AnimalsDataTable() {
@@ -2501,6 +2559,14 @@ namespace HumaneSociety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Shot_Status_IDColumn {
+                get {
+                    return this.columnShot_Status_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2536,9 +2602,10 @@ namespace HumaneSociety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AnimalsRow AddAnimalsRow(NamesRow parentNamesRowByFK__Animals__Name_ID__0D7A0286, ClassesRow parentClassesRowByFK__Animals__Class_I__0E6E26BF, BreedsRow parentBreedsRowByFK__Animals__Breeds___10566F31, ColorsRow parentColorsRowByFK__Animals__Color_I__1AD3FDA4, CompatabilitiesRow parentCompatabilitiesRowByFK__Animals__Compata__151B244E, GendersRow parentGendersRowByFK__Animals__Gender___19DFD96B, AvailabilitiesRow parentAvailabilitiesRowByFK__Animals__Availab__1DB06A4F, SpeciesRow parentSpeciesRowByFK__Animals__Species__1EA48E88, PricesRow parentPricesRowByFK__Animals__Price_I__208CD6FA, Date_Of_BirthsRow parentDate_Of_BirthsRowByFK__Animals__Date_Of__32AB8735) {
+            public AnimalsRow AddAnimalsRow(NamesRow parentNamesRowByFK__Animals__Name_ID__0D7A0286, ClassesRow parentClassesRowByFK__Animals__Class_I__0E6E26BF, BreedsRow parentBreedsRowByFK__Animals__Breeds___10566F31, ColorsRow parentColorsRowByFK__Animals__Color_I__1AD3FDA4, CompatabilitiesRow parentCompatabilitiesRowByFK__Animals__Compata__151B244E, GendersRow parentGendersRowByFK__Animals__Gender___19DFD96B, AvailabilitiesRow parentAvailabilitiesRowByFK__Animals__Availab__1DB06A4F, SpeciesRow parentSpeciesRowByFK__Animals__Species__1EA48E88, PricesRow parentPricesRowByFK__Animals__Price_I__208CD6FA, Date_Of_BirthsRow parentDate_Of_BirthsRowByFK__Animals__Date_Of__32AB8735, Shot_StatusesRow parentShot_StatusesRowByFK__Animals__Shot_St__46B27FE2) {
                 AnimalsRow rowAnimalsRow = ((AnimalsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        null,
                         null,
                         null,
                         null,
@@ -2580,6 +2647,9 @@ namespace HumaneSociety {
                 if ((parentDate_Of_BirthsRowByFK__Animals__Date_Of__32AB8735 != null)) {
                     columnValuesArray[10] = parentDate_Of_BirthsRowByFK__Animals__Date_Of__32AB8735[0];
                 }
+                if ((parentShot_StatusesRowByFK__Animals__Shot_St__46B27FE2 != null)) {
+                    columnValuesArray[11] = parentShot_StatusesRowByFK__Animals__Shot_St__46B27FE2[0];
+                }
                 rowAnimalsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAnimalsRow);
                 return rowAnimalsRow;
@@ -2620,6 +2690,7 @@ namespace HumaneSociety {
                 this.columnSpecies_ID = base.Columns["Species_ID"];
                 this.columnPrice_ID = base.Columns["Price_ID"];
                 this.columnDate_Of_Birth_ID = base.Columns["Date_Of_Birth_ID"];
+                this.columnShot_Status_ID = base.Columns["Shot_Status_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2647,6 +2718,8 @@ namespace HumaneSociety {
                 base.Columns.Add(this.columnPrice_ID);
                 this.columnDate_Of_Birth_ID = new global::System.Data.DataColumn("Date_Of_Birth_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate_Of_Birth_ID);
+                this.columnShot_Status_ID = new global::System.Data.DataColumn("Shot_Status_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShot_Status_ID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnAnimal_ID}, true));
                 this.columnAnimal_ID.AutoIncrement = true;
@@ -8192,6 +8265,283 @@ namespace HumaneSociety {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Shot_StatusesDataTable : global::System.Data.TypedTableBase<Shot_StatusesRow> {
+            
+            private global::System.Data.DataColumn columnShot_Status_ID;
+            
+            private global::System.Data.DataColumn columnShot_Status_Name;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Shot_StatusesDataTable() {
+                this.TableName = "Shot_Statuses";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal Shot_StatusesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected Shot_StatusesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Shot_Status_IDColumn {
+                get {
+                    return this.columnShot_Status_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Shot_Status_NameColumn {
+                get {
+                    return this.columnShot_Status_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Shot_StatusesRow this[int index] {
+                get {
+                    return ((Shot_StatusesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Shot_StatusesRowChangeEventHandler Shot_StatusesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Shot_StatusesRowChangeEventHandler Shot_StatusesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Shot_StatusesRowChangeEventHandler Shot_StatusesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Shot_StatusesRowChangeEventHandler Shot_StatusesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddShot_StatusesRow(Shot_StatusesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Shot_StatusesRow AddShot_StatusesRow(string Shot_Status_Name) {
+                Shot_StatusesRow rowShot_StatusesRow = ((Shot_StatusesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Shot_Status_Name};
+                rowShot_StatusesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowShot_StatusesRow);
+                return rowShot_StatusesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Shot_StatusesRow FindByShot_Status_ID(int Shot_Status_ID) {
+                return ((Shot_StatusesRow)(this.Rows.Find(new object[] {
+                            Shot_Status_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Shot_StatusesDataTable cln = ((Shot_StatusesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Shot_StatusesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnShot_Status_ID = base.Columns["Shot_Status_ID"];
+                this.columnShot_Status_Name = base.Columns["Shot_Status_Name"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnShot_Status_ID = new global::System.Data.DataColumn("Shot_Status_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShot_Status_ID);
+                this.columnShot_Status_Name = new global::System.Data.DataColumn("Shot_Status_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShot_Status_Name);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnShot_Status_ID}, true));
+                this.columnShot_Status_ID.AutoIncrement = true;
+                this.columnShot_Status_ID.AutoIncrementSeed = -1;
+                this.columnShot_Status_ID.AutoIncrementStep = -1;
+                this.columnShot_Status_ID.AllowDBNull = false;
+                this.columnShot_Status_ID.ReadOnly = true;
+                this.columnShot_Status_ID.Unique = true;
+                this.columnShot_Status_Name.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Shot_StatusesRow NewShot_StatusesRow() {
+                return ((Shot_StatusesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Shot_StatusesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Shot_StatusesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Shot_StatusesRowChanged != null)) {
+                    this.Shot_StatusesRowChanged(this, new Shot_StatusesRowChangeEvent(((Shot_StatusesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Shot_StatusesRowChanging != null)) {
+                    this.Shot_StatusesRowChanging(this, new Shot_StatusesRowChangeEvent(((Shot_StatusesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Shot_StatusesRowDeleted != null)) {
+                    this.Shot_StatusesRowDeleted(this, new Shot_StatusesRowChangeEvent(((Shot_StatusesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Shot_StatusesRowDeleting != null)) {
+                    this.Shot_StatusesRowDeleting(this, new Shot_StatusesRowChangeEvent(((Shot_StatusesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveShot_StatusesRow(Shot_StatusesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                HumaneSocietyDatabaseDataSet ds = new HumaneSocietyDatabaseDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Shot_StatusesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SpeciesDataTable : global::System.Data.TypedTableBase<SpeciesRow> {
             
             private global::System.Data.DataColumn columnSpecies_ID;
@@ -9334,6 +9684,10 @@ namespace HumaneSociety {
             
             private global::System.Data.DataColumn columnStatus_ID;
             
+            private global::System.Data.DataColumn columnFirst_Name_ID;
+            
+            private global::System.Data.DataColumn columnLast_Name_ID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public UsersDataTable() {
@@ -9425,6 +9779,22 @@ namespace HumaneSociety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn First_Name_IDColumn {
+                get {
+                    return this.columnFirst_Name_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Last_Name_IDColumn {
+                get {
+                    return this.columnLast_Name_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9460,9 +9830,11 @@ namespace HumaneSociety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public UsersRow AddUsersRow(UserNamesRow parentUserNamesRowByFK__Users__UserName___2BFE89A6, PassWordsRow parentPassWordsRowByFK__Users__PassWord___2DE6D218, AddressesRow parentAddressesRowByFK__Users__Address_I__2EDAF651, GendersRow parentGendersRowByFK__Users__Gender_ID__2FCF1A8A, Phone_NumbersRow parentPhone_NumbersRowByFK__Users__Phone_Num__30C33EC3, EmployeeStatusesRow parentEmployeeStatusesRowByFK__Users__Status_ID__40F9A68C) {
+            public UsersRow AddUsersRow(UserNamesRow parentUserNamesRowByFK__Users__UserName___2BFE89A6, PassWordsRow parentPassWordsRowByFK__Users__PassWord___2DE6D218, AddressesRow parentAddressesRowByFK__Users__Address_I__2EDAF651, GendersRow parentGendersRowByFK__Users__Gender_ID__2FCF1A8A, Phone_NumbersRow parentPhone_NumbersRowByFK__Users__Phone_Num__30C33EC3, EmployeeStatusesRow parentEmployeeStatusesRowByFK__Users__Status_ID__40F9A68C, First_NamesRow parentFirst_NamesRowByFK__Users__First_Nam__41EDCAC5, Last_NamesRow parentLast_NamesRowByFK__Users__Last_Name__42E1EEFE) {
                 UsersRow rowUsersRow = ((UsersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        null,
+                        null,
                         null,
                         null,
                         null,
@@ -9487,6 +9859,12 @@ namespace HumaneSociety {
                 }
                 if ((parentEmployeeStatusesRowByFK__Users__Status_ID__40F9A68C != null)) {
                     columnValuesArray[6] = parentEmployeeStatusesRowByFK__Users__Status_ID__40F9A68C[0];
+                }
+                if ((parentFirst_NamesRowByFK__Users__First_Nam__41EDCAC5 != null)) {
+                    columnValuesArray[7] = parentFirst_NamesRowByFK__Users__First_Nam__41EDCAC5[0];
+                }
+                if ((parentLast_NamesRowByFK__Users__Last_Name__42E1EEFE != null)) {
+                    columnValuesArray[8] = parentLast_NamesRowByFK__Users__Last_Name__42E1EEFE[0];
                 }
                 rowUsersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsersRow);
@@ -9524,6 +9902,8 @@ namespace HumaneSociety {
                 this.columnGender_ID = base.Columns["Gender_ID"];
                 this.columnPhone_Number_ID = base.Columns["Phone_Number_ID"];
                 this.columnStatus_ID = base.Columns["Status_ID"];
+                this.columnFirst_Name_ID = base.Columns["First_Name_ID"];
+                this.columnLast_Name_ID = base.Columns["Last_Name_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9543,6 +9923,10 @@ namespace HumaneSociety {
                 base.Columns.Add(this.columnPhone_Number_ID);
                 this.columnStatus_ID = new global::System.Data.DataColumn("Status_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus_ID);
+                this.columnFirst_Name_ID = new global::System.Data.DataColumn("First_Name_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirst_Name_ID);
+                this.columnLast_Name_ID = new global::System.Data.DataColumn("Last_Name_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLast_Name_ID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnUser_ID}, true));
                 this.columnUser_ID.AutoIncrement = true;
@@ -10515,6 +10899,22 @@ namespace HumaneSociety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Shot_Status_ID {
+                get {
+                    try {
+                        return ((int)(this[this.tableAnimals.Shot_Status_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Shot_Status_ID\' in table \'Animals\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAnimals.Shot_Status_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public AvailabilitiesRow AvailabilitiesRow {
                 get {
                     return ((AvailabilitiesRow)(this.GetParentRow(this.Table.ParentRelations["FK__Animals__Availab__1DB06A4F"])));
@@ -10609,6 +11009,17 @@ namespace HumaneSociety {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Animals__Price_I__208CD6FA"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Shot_StatusesRow Shot_StatusesRow {
+                get {
+                    return ((Shot_StatusesRow)(this.GetParentRow(this.Table.ParentRelations["FK__Animals__Shot_St__46B27FE2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Animals__Shot_St__46B27FE2"]);
                 }
             }
             
@@ -10741,6 +11152,18 @@ namespace HumaneSociety {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDate_Of_Birth_IDNull() {
                 this[this.tableAnimals.Date_Of_Birth_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsShot_Status_IDNull() {
+                return this.IsNull(this.tableAnimals.Shot_Status_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetShot_Status_IDNull() {
+                this[this.tableAnimals.Shot_Status_IDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11491,6 +11914,17 @@ namespace HumaneSociety {
                     return ((NamesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_First_Names"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public UsersRow[] GetUsersRows() {
+                if ((this.Table.ChildRelations["FK__Users__First_Nam__41EDCAC5"] == null)) {
+                    return new UsersRow[0];
+                }
+                else {
+                    return ((UsersRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Users__First_Nam__41EDCAC5"])));
+                }
+            }
         }
         
         /// <summary>
@@ -11613,6 +12047,17 @@ namespace HumaneSociety {
                 }
                 else {
                     return ((NamesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Last_Names"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public UsersRow[] GetUsersRows() {
+                if ((this.Table.ChildRelations["FK__Users__Last_Name__42E1EEFE"] == null)) {
+                    return new UsersRow[0];
+                }
+                else {
+                    return ((UsersRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Users__Last_Name__42E1EEFE"])));
                 }
             }
         }
@@ -12132,6 +12577,71 @@ namespace HumaneSociety {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class Shot_StatusesRow : global::System.Data.DataRow {
+            
+            private Shot_StatusesDataTable tableShot_Statuses;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal Shot_StatusesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableShot_Statuses = ((Shot_StatusesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Shot_Status_ID {
+                get {
+                    return ((int)(this[this.tableShot_Statuses.Shot_Status_IDColumn]));
+                }
+                set {
+                    this[this.tableShot_Statuses.Shot_Status_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Shot_Status_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableShot_Statuses.Shot_Status_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Shot_Status_Name\' in table \'Shot_Statuses\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableShot_Statuses.Shot_Status_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsShot_Status_NameNull() {
+                return this.IsNull(this.tableShot_Statuses.Shot_Status_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetShot_Status_NameNull() {
+                this[this.tableShot_Statuses.Shot_Status_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AnimalsRow[] GetAnimalsRows() {
+                if ((this.Table.ChildRelations["FK__Animals__Shot_St__46B27FE2"] == null)) {
+                    return new AnimalsRow[0];
+                }
+                else {
+                    return ((AnimalsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Animals__Shot_St__46B27FE2"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class SpeciesRow : global::System.Data.DataRow {
             
             private SpeciesDataTable tableSpecies;
@@ -12489,6 +12999,38 @@ namespace HumaneSociety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int First_Name_ID {
+                get {
+                    try {
+                        return ((int)(this[this.tableUsers.First_Name_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'First_Name_ID\' in table \'Users\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUsers.First_Name_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Last_Name_ID {
+                get {
+                    try {
+                        return ((int)(this[this.tableUsers.Last_Name_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Last_Name_ID\' in table \'Users\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUsers.Last_Name_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public AddressesRow AddressesRow {
                 get {
                     return ((AddressesRow)(this.GetParentRow(this.Table.ParentRelations["FK__Users__Address_I__2EDAF651"])));
@@ -12500,12 +13042,34 @@ namespace HumaneSociety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public First_NamesRow First_NamesRow {
+                get {
+                    return ((First_NamesRow)(this.GetParentRow(this.Table.ParentRelations["FK__Users__First_Nam__41EDCAC5"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Users__First_Nam__41EDCAC5"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public GendersRow GendersRow {
                 get {
                     return ((GendersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Users__Gender_ID__2FCF1A8A"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Users__Gender_ID__2FCF1A8A"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Last_NamesRow Last_NamesRow {
+                get {
+                    return ((Last_NamesRow)(this.GetParentRow(this.Table.ParentRelations["FK__Users__Last_Name__42E1EEFE"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Users__Last_Name__42E1EEFE"]);
                 }
             }
             
@@ -12623,6 +13187,30 @@ namespace HumaneSociety {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetStatus_IDNull() {
                 this[this.tableUsers.Status_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFirst_Name_IDNull() {
+                return this.IsNull(this.tableUsers.First_Name_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFirst_Name_IDNull() {
+                this[this.tableUsers.First_Name_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsLast_Name_IDNull() {
+                return this.IsNull(this.tableUsers.Last_Name_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetLast_Name_IDNull() {
+                this[this.tableUsers.Last_Name_IDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -13442,6 +14030,40 @@ namespace HumaneSociety {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PricesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class Shot_StatusesRowChangeEvent : global::System.EventArgs {
+            
+            private Shot_StatusesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Shot_StatusesRowChangeEvent(Shot_StatusesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Shot_StatusesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -14909,10 +15531,11 @@ SELECT Address_ID, City_ID, State_ID, ZipCode_ID, Street_ID, Address_Number_ID F
             tableMapping.ColumnMappings.Add("Species_ID", "Species_ID");
             tableMapping.ColumnMappings.Add("Price_ID", "Price_ID");
             tableMapping.ColumnMappings.Add("Date_Of_Birth_ID", "Date_Of_Birth_ID");
+            tableMapping.ColumnMappings.Add("Shot_Status_ID", "Shot_Status_ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [mt].[Animals] WHERE (([Animal_ID] = @Original_Animal_ID) AND ((@IsNull_Name_ID = 1 AND [Name_ID] IS NULL) OR ([Name_ID] = @Original_Name_ID)) AND ((@IsNull_Class_ID = 1 AND [Class_ID] IS NULL) OR ([Class_ID] = @Original_Class_ID)) AND ((@IsNull_Breeds_ID = 1 AND [Breeds_ID] IS NULL) OR ([Breeds_ID] = @Original_Breeds_ID)) AND ((@IsNull_Color_ID = 1 AND [Color_ID] IS NULL) OR ([Color_ID] = @Original_Color_ID)) AND ((@IsNull_Compatability_ID = 1 AND [Compatability_ID] IS NULL) OR ([Compatability_ID] = @Original_Compatability_ID)) AND ((@IsNull_Gender_ID = 1 AND [Gender_ID] IS NULL) OR ([Gender_ID] = @Original_Gender_ID)) AND ((@IsNull_Availability_ID = 1 AND [Availability_ID] IS NULL) OR ([Availability_ID] = @Original_Availability_ID)) AND ((@IsNull_Species_ID = 1 AND [Species_ID] IS NULL) OR ([Species_ID] = @Original_Species_ID)) AND ((@IsNull_Price_ID = 1 AND [Price_ID] IS NULL) OR ([Price_ID] = @Original_Price_ID)) AND ((@IsNull_Date_Of_Birth_ID = 1 AND [Date_Of_Birth_ID] IS NULL) OR ([Date_Of_Birth_ID] = @Original_Date_Of_Birth_ID)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [mt].[Animals] WHERE (([Animal_ID] = @Original_Animal_ID) AND ((@IsNull_Name_ID = 1 AND [Name_ID] IS NULL) OR ([Name_ID] = @Original_Name_ID)) AND ((@IsNull_Class_ID = 1 AND [Class_ID] IS NULL) OR ([Class_ID] = @Original_Class_ID)) AND ((@IsNull_Breeds_ID = 1 AND [Breeds_ID] IS NULL) OR ([Breeds_ID] = @Original_Breeds_ID)) AND ((@IsNull_Color_ID = 1 AND [Color_ID] IS NULL) OR ([Color_ID] = @Original_Color_ID)) AND ((@IsNull_Compatability_ID = 1 AND [Compatability_ID] IS NULL) OR ([Compatability_ID] = @Original_Compatability_ID)) AND ((@IsNull_Gender_ID = 1 AND [Gender_ID] IS NULL) OR ([Gender_ID] = @Original_Gender_ID)) AND ((@IsNull_Availability_ID = 1 AND [Availability_ID] IS NULL) OR ([Availability_ID] = @Original_Availability_ID)) AND ((@IsNull_Species_ID = 1 AND [Species_ID] IS NULL) OR ([Species_ID] = @Original_Species_ID)) AND ((@IsNull_Price_ID = 1 AND [Price_ID] IS NULL) OR ([Price_ID] = @Original_Price_ID)) AND ((@IsNull_Date_Of_Birth_ID = 1 AND [Date_Of_Birth_ID] IS NULL) OR ([Date_Of_Birth_ID] = @Original_Date_Of_Birth_ID)) AND ((@IsNull_Shot_Status_ID = 1 AND [Shot_Status_ID] IS NULL) OR ([Shot_Status_ID] = @Original_Shot_Status_ID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Animal_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Animal_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -14935,10 +15558,12 @@ SELECT Address_ID, City_ID, State_ID, ZipCode_ID, Street_ID, Address_Number_ID F
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date_Of_Birth_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Of_Birth_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date_Of_Birth_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Of_Birth_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Shot_Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shot_Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [mt].[Animals] ([Name_ID], [Class_ID], [Breeds_ID], [Color_ID], [Compatability_ID], [Gender_ID], [Availability_ID], [Species_ID], [Price_ID], [Date_Of_Birth_ID]) VALUES (@Name_ID, @Class_ID, @Breeds_ID, @Color_ID, @Compatability_ID, @Gender_ID, @Availability_ID, @Species_ID, @Price_ID, @Date_Of_Birth_ID);
-SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gender_ID, Availability_ID, Species_ID, Price_ID, Date_Of_Birth_ID FROM mt.Animals WHERE (Animal_ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [mt].[Animals] ([Name_ID], [Class_ID], [Breeds_ID], [Color_ID], [Compatability_ID], [Gender_ID], [Availability_ID], [Species_ID], [Price_ID], [Date_Of_Birth_ID], [Shot_Status_ID]) VALUES (@Name_ID, @Class_ID, @Breeds_ID, @Color_ID, @Compatability_ID, @Gender_ID, @Availability_ID, @Species_ID, @Price_ID, @Date_Of_Birth_ID, @Shot_Status_ID);
+SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gender_ID, Availability_ID, Species_ID, Price_ID, Date_Of_Birth_ID, Shot_Status_ID FROM mt.Animals WHERE (Animal_ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Class_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Class_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -14950,28 +15575,31 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Species_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Species_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_Of_Birth_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Of_Birth_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shot_Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [mt].[Animals] SET [Name_ID] = @Name_ID, [Class_ID] = @Class_ID, [Breeds_I" +
                 "D] = @Breeds_ID, [Color_ID] = @Color_ID, [Compatability_ID] = @Compatability_ID," +
                 " [Gender_ID] = @Gender_ID, [Availability_ID] = @Availability_ID, [Species_ID] = " +
-                "@Species_ID, [Price_ID] = @Price_ID, [Date_Of_Birth_ID] = @Date_Of_Birth_ID WHER" +
-                "E (([Animal_ID] = @Original_Animal_ID) AND ((@IsNull_Name_ID = 1 AND [Name_ID] I" +
-                "S NULL) OR ([Name_ID] = @Original_Name_ID)) AND ((@IsNull_Class_ID = 1 AND [Clas" +
-                "s_ID] IS NULL) OR ([Class_ID] = @Original_Class_ID)) AND ((@IsNull_Breeds_ID = 1" +
-                " AND [Breeds_ID] IS NULL) OR ([Breeds_ID] = @Original_Breeds_ID)) AND ((@IsNull_" +
-                "Color_ID = 1 AND [Color_ID] IS NULL) OR ([Color_ID] = @Original_Color_ID)) AND (" +
-                "(@IsNull_Compatability_ID = 1 AND [Compatability_ID] IS NULL) OR ([Compatability" +
-                "_ID] = @Original_Compatability_ID)) AND ((@IsNull_Gender_ID = 1 AND [Gender_ID] " +
-                "IS NULL) OR ([Gender_ID] = @Original_Gender_ID)) AND ((@IsNull_Availability_ID =" +
-                " 1 AND [Availability_ID] IS NULL) OR ([Availability_ID] = @Original_Availability" +
-                "_ID)) AND ((@IsNull_Species_ID = 1 AND [Species_ID] IS NULL) OR ([Species_ID] = " +
-                "@Original_Species_ID)) AND ((@IsNull_Price_ID = 1 AND [Price_ID] IS NULL) OR ([P" +
-                "rice_ID] = @Original_Price_ID)) AND ((@IsNull_Date_Of_Birth_ID = 1 AND [Date_Of_" +
-                "Birth_ID] IS NULL) OR ([Date_Of_Birth_ID] = @Original_Date_Of_Birth_ID)));\r\nSELE" +
-                "CT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gender_I" +
-                "D, Availability_ID, Species_ID, Price_ID, Date_Of_Birth_ID FROM mt.Animals WHERE" +
-                " (Animal_ID = @Animal_ID)";
+                "@Species_ID, [Price_ID] = @Price_ID, [Date_Of_Birth_ID] = @Date_Of_Birth_ID, [Sh" +
+                "ot_Status_ID] = @Shot_Status_ID WHERE (([Animal_ID] = @Original_Animal_ID) AND (" +
+                "(@IsNull_Name_ID = 1 AND [Name_ID] IS NULL) OR ([Name_ID] = @Original_Name_ID)) " +
+                "AND ((@IsNull_Class_ID = 1 AND [Class_ID] IS NULL) OR ([Class_ID] = @Original_Cl" +
+                "ass_ID)) AND ((@IsNull_Breeds_ID = 1 AND [Breeds_ID] IS NULL) OR ([Breeds_ID] = " +
+                "@Original_Breeds_ID)) AND ((@IsNull_Color_ID = 1 AND [Color_ID] IS NULL) OR ([Co" +
+                "lor_ID] = @Original_Color_ID)) AND ((@IsNull_Compatability_ID = 1 AND [Compatabi" +
+                "lity_ID] IS NULL) OR ([Compatability_ID] = @Original_Compatability_ID)) AND ((@I" +
+                "sNull_Gender_ID = 1 AND [Gender_ID] IS NULL) OR ([Gender_ID] = @Original_Gender_" +
+                "ID)) AND ((@IsNull_Availability_ID = 1 AND [Availability_ID] IS NULL) OR ([Avail" +
+                "ability_ID] = @Original_Availability_ID)) AND ((@IsNull_Species_ID = 1 AND [Spec" +
+                "ies_ID] IS NULL) OR ([Species_ID] = @Original_Species_ID)) AND ((@IsNull_Price_I" +
+                "D = 1 AND [Price_ID] IS NULL) OR ([Price_ID] = @Original_Price_ID)) AND ((@IsNul" +
+                "l_Date_Of_Birth_ID = 1 AND [Date_Of_Birth_ID] IS NULL) OR ([Date_Of_Birth_ID] = " +
+                "@Original_Date_Of_Birth_ID)) AND ((@IsNull_Shot_Status_ID = 1 AND [Shot_Status_I" +
+                "D] IS NULL) OR ([Shot_Status_ID] = @Original_Shot_Status_ID)));\r\nSELECT Animal_I" +
+                "D, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gender_ID, Availabi" +
+                "lity_ID, Species_ID, Price_ID, Date_Of_Birth_ID, Shot_Status_ID FROM mt.Animals " +
+                "WHERE (Animal_ID = @Animal_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Class_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Class_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -14983,6 +15611,7 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Species_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Species_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_Of_Birth_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Of_Birth_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shot_Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Animal_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Animal_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -15004,6 +15633,8 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date_Of_Birth_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Of_Birth_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date_Of_Birth_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Of_Birth_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Shot_Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shot_Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Animal_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Animal_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -15021,7 +15652,8 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gende" +
-                "r_ID, Availability_ID, Species_ID, Price_ID, Date_Of_Birth_ID FROM mt.Animals";
+                "r_ID, Availability_ID, Species_ID, Price_ID, Date_Of_Birth_ID, Shot_Status_ID FR" +
+                "OM mt.Animals";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -15082,7 +15714,7 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Animal_ID, global::System.Nullable<int> Original_Name_ID, global::System.Nullable<int> Original_Class_ID, global::System.Nullable<int> Original_Breeds_ID, global::System.Nullable<int> Original_Color_ID, global::System.Nullable<int> Original_Compatability_ID, global::System.Nullable<int> Original_Gender_ID, global::System.Nullable<int> Original_Availability_ID, global::System.Nullable<int> Original_Species_ID, global::System.Nullable<int> Original_Price_ID, global::System.Nullable<int> Original_Date_Of_Birth_ID) {
+        public virtual int Delete(int Original_Animal_ID, global::System.Nullable<int> Original_Name_ID, global::System.Nullable<int> Original_Class_ID, global::System.Nullable<int> Original_Breeds_ID, global::System.Nullable<int> Original_Color_ID, global::System.Nullable<int> Original_Compatability_ID, global::System.Nullable<int> Original_Gender_ID, global::System.Nullable<int> Original_Availability_ID, global::System.Nullable<int> Original_Species_ID, global::System.Nullable<int> Original_Price_ID, global::System.Nullable<int> Original_Date_Of_Birth_ID, global::System.Nullable<int> Original_Shot_Status_ID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Animal_ID));
             if ((Original_Name_ID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -15164,6 +15796,14 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
+            if ((Original_Shot_Status_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_Shot_Status_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15184,7 +15824,7 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> Name_ID, global::System.Nullable<int> Class_ID, global::System.Nullable<int> Breeds_ID, global::System.Nullable<int> Color_ID, global::System.Nullable<int> Compatability_ID, global::System.Nullable<int> Gender_ID, global::System.Nullable<int> Availability_ID, global::System.Nullable<int> Species_ID, global::System.Nullable<int> Price_ID, global::System.Nullable<int> Date_Of_Birth_ID) {
+        public virtual int Insert(global::System.Nullable<int> Name_ID, global::System.Nullable<int> Class_ID, global::System.Nullable<int> Breeds_ID, global::System.Nullable<int> Color_ID, global::System.Nullable<int> Compatability_ID, global::System.Nullable<int> Gender_ID, global::System.Nullable<int> Availability_ID, global::System.Nullable<int> Species_ID, global::System.Nullable<int> Price_ID, global::System.Nullable<int> Date_Of_Birth_ID, global::System.Nullable<int> Shot_Status_ID) {
             if ((Name_ID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Name_ID.Value));
             }
@@ -15245,6 +15885,12 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
+            if ((Shot_Status_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(Shot_Status_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15276,6 +15922,7 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
                     global::System.Nullable<int> Species_ID, 
                     global::System.Nullable<int> Price_ID, 
                     global::System.Nullable<int> Date_Of_Birth_ID, 
+                    global::System.Nullable<int> Shot_Status_ID, 
                     int Original_Animal_ID, 
                     global::System.Nullable<int> Original_Name_ID, 
                     global::System.Nullable<int> Original_Class_ID, 
@@ -15287,6 +15934,7 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
                     global::System.Nullable<int> Original_Species_ID, 
                     global::System.Nullable<int> Original_Price_ID, 
                     global::System.Nullable<int> Original_Date_Of_Birth_ID, 
+                    global::System.Nullable<int> Original_Shot_Status_ID, 
                     int Animal_ID) {
             if ((Name_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Name_ID.Value));
@@ -15348,88 +15996,102 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Animal_ID));
-            if ((Original_Name_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Name_ID.Value));
+            if ((Shot_Status_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Shot_Status_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Animal_ID));
+            if ((Original_Name_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Name_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_Class_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Class_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Class_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((Original_Breeds_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Breeds_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_Breeds_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             if ((Original_Color_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_Color_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_Color_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             if ((Original_Compatability_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_Compatability_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_Compatability_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             if ((Original_Gender_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_Gender_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_Gender_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             if ((Original_Availability_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_Availability_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_Availability_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             if ((Original_Species_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_Species_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_Species_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             if ((Original_Price_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_Price_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Original_Price_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             if ((Original_Date_Of_Birth_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_Date_Of_Birth_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(Original_Date_Of_Birth_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(Animal_ID));
+            if ((Original_Shot_Status_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_Shot_Status_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Animal_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15461,6 +16123,7 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
                     global::System.Nullable<int> Species_ID, 
                     global::System.Nullable<int> Price_ID, 
                     global::System.Nullable<int> Date_Of_Birth_ID, 
+                    global::System.Nullable<int> Shot_Status_ID, 
                     int Original_Animal_ID, 
                     global::System.Nullable<int> Original_Name_ID, 
                     global::System.Nullable<int> Original_Class_ID, 
@@ -15471,8 +16134,9 @@ SELECT Animal_ID, Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gend
                     global::System.Nullable<int> Original_Availability_ID, 
                     global::System.Nullable<int> Original_Species_ID, 
                     global::System.Nullable<int> Original_Price_ID, 
-                    global::System.Nullable<int> Original_Date_Of_Birth_ID) {
-            return this.Update(Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gender_ID, Availability_ID, Species_ID, Price_ID, Date_Of_Birth_ID, Original_Animal_ID, Original_Name_ID, Original_Class_ID, Original_Breeds_ID, Original_Color_ID, Original_Compatability_ID, Original_Gender_ID, Original_Availability_ID, Original_Species_ID, Original_Price_ID, Original_Date_Of_Birth_ID, Original_Animal_ID);
+                    global::System.Nullable<int> Original_Date_Of_Birth_ID, 
+                    global::System.Nullable<int> Original_Shot_Status_ID) {
+            return this.Update(Name_ID, Class_ID, Breeds_ID, Color_ID, Compatability_ID, Gender_ID, Availability_ID, Species_ID, Price_ID, Date_Of_Birth_ID, Shot_Status_ID, Original_Animal_ID, Original_Name_ID, Original_Class_ID, Original_Breeds_ID, Original_Color_ID, Original_Compatability_ID, Original_Gender_ID, Original_Availability_ID, Original_Species_ID, Original_Price_ID, Original_Date_Of_Birth_ID, Original_Shot_Status_ID, Original_Animal_ID);
         }
     }
     
@@ -21831,6 +22495,331 @@ SELECT Prices_ID, Prices_Name, Prices_Amount FROM mt.Prices WHERE (Prices_ID = @
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Shot_StatusesTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public Shot_StatusesTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Shot_Statuses";
+            tableMapping.ColumnMappings.Add("Shot_Status_ID", "Shot_Status_ID");
+            tableMapping.ColumnMappings.Add("Shot_Status_Name", "Shot_Status_Name");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [mt].[Shot_Statuses] WHERE (([Shot_Status_ID] = @Original_Shot_Status" +
+                "_ID) AND ((@IsNull_Shot_Status_Name = 1 AND [Shot_Status_Name] IS NULL) OR ([Sho" +
+                "t_Status_Name] = @Original_Shot_Status_Name)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shot_Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Shot_Status_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shot_Status_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [mt].[Shot_Statuses] ([Shot_Status_Name]) VALUES (@Shot_Status_Name);" +
+                "\r\nSELECT Shot_Status_ID, Shot_Status_Name FROM mt.Shot_Statuses WHERE (Shot_Stat" +
+                "us_ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shot_Status_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [mt].[Shot_Statuses] SET [Shot_Status_Name] = @Shot_Status_Name WHERE (([Shot_Status_ID] = @Original_Shot_Status_ID) AND ((@IsNull_Shot_Status_Name = 1 AND [Shot_Status_Name] IS NULL) OR ([Shot_Status_Name] = @Original_Shot_Status_Name)));
+SELECT Shot_Status_ID, Shot_Status_Name FROM mt.Shot_Statuses WHERE (Shot_Status_ID = @Shot_Status_ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shot_Status_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shot_Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Shot_Status_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shot_Status_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shot_Status_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Shot_Status_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::HumaneSociety.Properties.Settings.Default.HumaneSocietyDatabase;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT Shot_Status_ID, Shot_Status_Name FROM mt.Shot_Statuses";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(HumaneSocietyDatabaseDataSet.Shot_StatusesDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual HumaneSocietyDatabaseDataSet.Shot_StatusesDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            HumaneSocietyDatabaseDataSet.Shot_StatusesDataTable dataTable = new HumaneSocietyDatabaseDataSet.Shot_StatusesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(HumaneSocietyDatabaseDataSet.Shot_StatusesDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(HumaneSocietyDatabaseDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Shot_Statuses");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_Shot_Status_ID, string Original_Shot_Status_Name) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Shot_Status_ID));
+            if ((Original_Shot_Status_Name == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Shot_Status_Name));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string Shot_Status_Name) {
+            if ((Shot_Status_Name == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Shot_Status_Name));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Shot_Status_Name, int Original_Shot_Status_ID, string Original_Shot_Status_Name, int Shot_Status_ID) {
+            if ((Shot_Status_Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Shot_Status_Name));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_Shot_Status_ID));
+            if ((Original_Shot_Status_Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Shot_Status_Name));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Shot_Status_ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Shot_Status_Name, int Original_Shot_Status_ID, string Original_Shot_Status_Name) {
+            return this.Update(Shot_Status_Name, Original_Shot_Status_ID, Original_Shot_Status_Name, Original_Shot_Status_ID);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class SpeciesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -23265,10 +24254,12 @@ SELECT Street_ID, Street_Name FROM mt.Streets WHERE (Street_ID = @Street_ID)";
             tableMapping.ColumnMappings.Add("Gender_ID", "Gender_ID");
             tableMapping.ColumnMappings.Add("Phone_Number_ID", "Phone_Number_ID");
             tableMapping.ColumnMappings.Add("Status_ID", "Status_ID");
+            tableMapping.ColumnMappings.Add("First_Name_ID", "First_Name_ID");
+            tableMapping.ColumnMappings.Add("Last_Name_ID", "Last_Name_ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [mt].[Users] WHERE (([User_ID] = @Original_User_ID) AND ((@IsNull_UserName_ID = 1 AND [UserName_ID] IS NULL) OR ([UserName_ID] = @Original_UserName_ID)) AND ((@IsNull_PassWord_ID = 1 AND [PassWord_ID] IS NULL) OR ([PassWord_ID] = @Original_PassWord_ID)) AND ((@IsNull_Address_ID = 1 AND [Address_ID] IS NULL) OR ([Address_ID] = @Original_Address_ID)) AND ((@IsNull_Gender_ID = 1 AND [Gender_ID] IS NULL) OR ([Gender_ID] = @Original_Gender_ID)) AND ((@IsNull_Phone_Number_ID = 1 AND [Phone_Number_ID] IS NULL) OR ([Phone_Number_ID] = @Original_Phone_Number_ID)) AND ((@IsNull_Status_ID = 1 AND [Status_ID] IS NULL) OR ([Status_ID] = @Original_Status_ID)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [mt].[Users] WHERE (([User_ID] = @Original_User_ID) AND ((@IsNull_UserName_ID = 1 AND [UserName_ID] IS NULL) OR ([UserName_ID] = @Original_UserName_ID)) AND ((@IsNull_PassWord_ID = 1 AND [PassWord_ID] IS NULL) OR ([PassWord_ID] = @Original_PassWord_ID)) AND ((@IsNull_Address_ID = 1 AND [Address_ID] IS NULL) OR ([Address_ID] = @Original_Address_ID)) AND ((@IsNull_Gender_ID = 1 AND [Gender_ID] IS NULL) OR ([Gender_ID] = @Original_Gender_ID)) AND ((@IsNull_Phone_Number_ID = 1 AND [Phone_Number_ID] IS NULL) OR ([Phone_Number_ID] = @Original_Phone_Number_ID)) AND ((@IsNull_Status_ID = 1 AND [Status_ID] IS NULL) OR ([Status_ID] = @Original_Status_ID)) AND ((@IsNull_First_Name_ID = 1 AND [First_Name_ID] IS NULL) OR ([First_Name_ID] = @Original_First_Name_ID)) AND ((@IsNull_Last_Name_ID = 1 AND [Last_Name_ID] IS NULL) OR ([Last_Name_ID] = @Original_Last_Name_ID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_User_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UserName_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -23283,10 +24274,14 @@ SELECT Street_ID, Street_Name FROM mt.Streets WHERE (Street_ID = @Street_ID)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Phone_Number_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone_Number_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_First_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "First_Name_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_First_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "First_Name_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Last_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Name_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Last_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Name_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [mt].[Users] ([UserName_ID], [PassWord_ID], [Address_ID], [Gender_ID], [Phone_Number_ID], [Status_ID]) VALUES (@UserName_ID, @PassWord_ID, @Address_ID, @Gender_ID, @Phone_Number_ID, @Status_ID);
-SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID, Status_ID FROM mt.Users WHERE (User_ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [mt].[Users] ([UserName_ID], [PassWord_ID], [Address_ID], [Gender_ID], [Phone_Number_ID], [Status_ID], [First_Name_ID], [Last_Name_ID]) VALUES (@UserName_ID, @PassWord_ID, @Address_ID, @Gender_ID, @Phone_Number_ID, @Status_ID, @First_Name_ID, @Last_Name_ID);
+SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID, Status_ID, First_Name_ID, Last_Name_ID FROM mt.Users WHERE (User_ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PassWord_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23294,10 +24289,12 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone_Number_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone_Number_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@First_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "First_Name_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Name_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [mt].[Users] SET [UserName_ID] = @UserName_ID, [PassWord_ID] = @PassWord_ID, [Address_ID] = @Address_ID, [Gender_ID] = @Gender_ID, [Phone_Number_ID] = @Phone_Number_ID, [Status_ID] = @Status_ID WHERE (([User_ID] = @Original_User_ID) AND ((@IsNull_UserName_ID = 1 AND [UserName_ID] IS NULL) OR ([UserName_ID] = @Original_UserName_ID)) AND ((@IsNull_PassWord_ID = 1 AND [PassWord_ID] IS NULL) OR ([PassWord_ID] = @Original_PassWord_ID)) AND ((@IsNull_Address_ID = 1 AND [Address_ID] IS NULL) OR ([Address_ID] = @Original_Address_ID)) AND ((@IsNull_Gender_ID = 1 AND [Gender_ID] IS NULL) OR ([Gender_ID] = @Original_Gender_ID)) AND ((@IsNull_Phone_Number_ID = 1 AND [Phone_Number_ID] IS NULL) OR ([Phone_Number_ID] = @Original_Phone_Number_ID)) AND ((@IsNull_Status_ID = 1 AND [Status_ID] IS NULL) OR ([Status_ID] = @Original_Status_ID)));
-SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID, Status_ID FROM mt.Users WHERE (User_ID = @User_ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [mt].[Users] SET [UserName_ID] = @UserName_ID, [PassWord_ID] = @PassWord_ID, [Address_ID] = @Address_ID, [Gender_ID] = @Gender_ID, [Phone_Number_ID] = @Phone_Number_ID, [Status_ID] = @Status_ID, [First_Name_ID] = @First_Name_ID, [Last_Name_ID] = @Last_Name_ID WHERE (([User_ID] = @Original_User_ID) AND ((@IsNull_UserName_ID = 1 AND [UserName_ID] IS NULL) OR ([UserName_ID] = @Original_UserName_ID)) AND ((@IsNull_PassWord_ID = 1 AND [PassWord_ID] IS NULL) OR ([PassWord_ID] = @Original_PassWord_ID)) AND ((@IsNull_Address_ID = 1 AND [Address_ID] IS NULL) OR ([Address_ID] = @Original_Address_ID)) AND ((@IsNull_Gender_ID = 1 AND [Gender_ID] IS NULL) OR ([Gender_ID] = @Original_Gender_ID)) AND ((@IsNull_Phone_Number_ID = 1 AND [Phone_Number_ID] IS NULL) OR ([Phone_Number_ID] = @Original_Phone_Number_ID)) AND ((@IsNull_Status_ID = 1 AND [Status_ID] IS NULL) OR ([Status_ID] = @Original_Status_ID)) AND ((@IsNull_First_Name_ID = 1 AND [First_Name_ID] IS NULL) OR ([First_Name_ID] = @Original_First_Name_ID)) AND ((@IsNull_Last_Name_ID = 1 AND [Last_Name_ID] IS NULL) OR ([Last_Name_ID] = @Original_Last_Name_ID)));
+SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID, Status_ID, First_Name_ID, Last_Name_ID FROM mt.Users WHERE (User_ID = @User_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PassWord_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23305,6 +24302,8 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone_Number_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone_Number_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@First_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "First_Name_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Name_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_User_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UserName_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -23318,6 +24317,10 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Phone_Number_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone_Number_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_First_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "First_Name_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_First_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "First_Name_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Last_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Name_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Last_Name_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last_Name_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@User_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "User_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -23335,7 +24338,7 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID," +
-                " Status_ID FROM mt.Users";
+                " Status_ID, First_Name_ID, Last_Name_ID FROM mt.Users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -23396,7 +24399,7 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_User_ID, global::System.Nullable<int> Original_UserName_ID, global::System.Nullable<int> Original_PassWord_ID, global::System.Nullable<int> Original_Address_ID, global::System.Nullable<int> Original_Gender_ID, global::System.Nullable<int> Original_Phone_Number_ID, global::System.Nullable<int> Original_Status_ID) {
+        public virtual int Delete(int Original_User_ID, global::System.Nullable<int> Original_UserName_ID, global::System.Nullable<int> Original_PassWord_ID, global::System.Nullable<int> Original_Address_ID, global::System.Nullable<int> Original_Gender_ID, global::System.Nullable<int> Original_Phone_Number_ID, global::System.Nullable<int> Original_Status_ID, global::System.Nullable<int> Original_First_Name_ID, global::System.Nullable<int> Original_Last_Name_ID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_User_ID));
             if ((Original_UserName_ID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -23446,6 +24449,22 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
+            if ((Original_First_Name_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_First_Name_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Last_Name_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_Last_Name_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23466,7 +24485,7 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> UserName_ID, global::System.Nullable<int> PassWord_ID, global::System.Nullable<int> Address_ID, global::System.Nullable<int> Gender_ID, global::System.Nullable<int> Phone_Number_ID, global::System.Nullable<int> Status_ID) {
+        public virtual int Insert(global::System.Nullable<int> UserName_ID, global::System.Nullable<int> PassWord_ID, global::System.Nullable<int> Address_ID, global::System.Nullable<int> Gender_ID, global::System.Nullable<int> Phone_Number_ID, global::System.Nullable<int> Status_ID, global::System.Nullable<int> First_Name_ID, global::System.Nullable<int> Last_Name_ID) {
             if ((UserName_ID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(UserName_ID.Value));
             }
@@ -23503,6 +24522,18 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
+            if ((First_Name_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(First_Name_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Last_Name_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Last_Name_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23523,7 +24554,25 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> UserName_ID, global::System.Nullable<int> PassWord_ID, global::System.Nullable<int> Address_ID, global::System.Nullable<int> Gender_ID, global::System.Nullable<int> Phone_Number_ID, global::System.Nullable<int> Status_ID, int Original_User_ID, global::System.Nullable<int> Original_UserName_ID, global::System.Nullable<int> Original_PassWord_ID, global::System.Nullable<int> Original_Address_ID, global::System.Nullable<int> Original_Gender_ID, global::System.Nullable<int> Original_Phone_Number_ID, global::System.Nullable<int> Original_Status_ID, int User_ID) {
+        public virtual int Update(
+                    global::System.Nullable<int> UserName_ID, 
+                    global::System.Nullable<int> PassWord_ID, 
+                    global::System.Nullable<int> Address_ID, 
+                    global::System.Nullable<int> Gender_ID, 
+                    global::System.Nullable<int> Phone_Number_ID, 
+                    global::System.Nullable<int> Status_ID, 
+                    global::System.Nullable<int> First_Name_ID, 
+                    global::System.Nullable<int> Last_Name_ID, 
+                    int Original_User_ID, 
+                    global::System.Nullable<int> Original_UserName_ID, 
+                    global::System.Nullable<int> Original_PassWord_ID, 
+                    global::System.Nullable<int> Original_Address_ID, 
+                    global::System.Nullable<int> Original_Gender_ID, 
+                    global::System.Nullable<int> Original_Phone_Number_ID, 
+                    global::System.Nullable<int> Original_Status_ID, 
+                    global::System.Nullable<int> Original_First_Name_ID, 
+                    global::System.Nullable<int> Original_Last_Name_ID, 
+                    int User_ID) {
             if ((UserName_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(UserName_ID.Value));
             }
@@ -23560,56 +24609,84 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_User_ID));
-            if ((Original_UserName_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_UserName_ID.Value));
+            if ((First_Name_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(First_Name_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_PassWord_ID.HasValue == true)) {
+            if ((Last_Name_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Last_Name_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_User_ID));
+            if ((Original_UserName_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_PassWord_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_UserName_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_Address_ID.HasValue == true)) {
+            if ((Original_PassWord_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Address_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_PassWord_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_Gender_ID.HasValue == true)) {
+            if ((Original_Address_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Gender_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Address_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_Phone_Number_ID.HasValue == true)) {
+            if ((Original_Gender_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Phone_Number_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Gender_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Original_Status_ID.HasValue == true)) {
+            if ((Original_Phone_Number_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_Status_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_Phone_Number_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(User_ID));
+            if ((Original_Status_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_Status_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_First_Name_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_First_Name_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Last_Name_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_Last_Name_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(User_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23630,8 +24707,25 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> UserName_ID, global::System.Nullable<int> PassWord_ID, global::System.Nullable<int> Address_ID, global::System.Nullable<int> Gender_ID, global::System.Nullable<int> Phone_Number_ID, global::System.Nullable<int> Status_ID, int Original_User_ID, global::System.Nullable<int> Original_UserName_ID, global::System.Nullable<int> Original_PassWord_ID, global::System.Nullable<int> Original_Address_ID, global::System.Nullable<int> Original_Gender_ID, global::System.Nullable<int> Original_Phone_Number_ID, global::System.Nullable<int> Original_Status_ID) {
-            return this.Update(UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID, Status_ID, Original_User_ID, Original_UserName_ID, Original_PassWord_ID, Original_Address_ID, Original_Gender_ID, Original_Phone_Number_ID, Original_Status_ID, Original_User_ID);
+        public virtual int Update(
+                    global::System.Nullable<int> UserName_ID, 
+                    global::System.Nullable<int> PassWord_ID, 
+                    global::System.Nullable<int> Address_ID, 
+                    global::System.Nullable<int> Gender_ID, 
+                    global::System.Nullable<int> Phone_Number_ID, 
+                    global::System.Nullable<int> Status_ID, 
+                    global::System.Nullable<int> First_Name_ID, 
+                    global::System.Nullable<int> Last_Name_ID, 
+                    int Original_User_ID, 
+                    global::System.Nullable<int> Original_UserName_ID, 
+                    global::System.Nullable<int> Original_PassWord_ID, 
+                    global::System.Nullable<int> Original_Address_ID, 
+                    global::System.Nullable<int> Original_Gender_ID, 
+                    global::System.Nullable<int> Original_Phone_Number_ID, 
+                    global::System.Nullable<int> Original_Status_ID, 
+                    global::System.Nullable<int> Original_First_Name_ID, 
+                    global::System.Nullable<int> Original_Last_Name_ID) {
+            return this.Update(UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID, Status_ID, First_Name_ID, Last_Name_ID, Original_User_ID, Original_UserName_ID, Original_PassWord_ID, Original_Address_ID, Original_Gender_ID, Original_Phone_Number_ID, Original_Status_ID, Original_First_Name_ID, Original_Last_Name_ID, Original_User_ID);
         }
     }
     
@@ -24011,6 +25105,8 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
         
         private PricesTableAdapter _pricesTableAdapter;
         
+        private Shot_StatusesTableAdapter _shot_StatusesTableAdapter;
+        
         private SpeciesTableAdapter _speciesTableAdapter;
         
         private StatesTableAdapter _statesTableAdapter;
@@ -24365,6 +25461,20 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
+        public Shot_StatusesTableAdapter Shot_StatusesTableAdapter {
+            get {
+                return this._shot_StatusesTableAdapter;
+            }
+            set {
+                this._shot_StatusesTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
         public SpeciesTableAdapter SpeciesTableAdapter {
             get {
                 return this._speciesTableAdapter;
@@ -24555,6 +25665,10 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                             && (this._pricesTableAdapter.Connection != null))) {
                     return this._pricesTableAdapter.Connection;
                 }
+                if (((this._shot_StatusesTableAdapter != null) 
+                            && (this._shot_StatusesTableAdapter.Connection != null))) {
+                    return this._shot_StatusesTableAdapter.Connection;
+                }
                 if (((this._speciesTableAdapter != null) 
                             && (this._speciesTableAdapter.Connection != null))) {
                     return this._speciesTableAdapter.Connection;
@@ -24659,6 +25773,9 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                     count = (count + 1);
                 }
                 if ((this._pricesTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._shot_StatusesTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._speciesTableAdapter != null)) {
@@ -24807,6 +25924,15 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._shot_StatusesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Shot_Statuses.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._shot_StatusesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._pricesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Prices.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -24849,6 +25975,15 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._classesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._availabilitiesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Availabilities.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._availabilitiesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -24906,24 +26041,6 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._availabilitiesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Availabilities.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._availabilitiesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._animalsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Animals.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._animalsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._usersTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -24948,6 +26065,15 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._locationsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._animalsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Animals.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._animalsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -25065,6 +26191,14 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._shot_StatusesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Shot_Statuses.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._shot_StatusesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._pricesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Prices.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -25102,6 +26236,14 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._classesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._availabilitiesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Availabilities.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._availabilitiesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -25153,22 +26295,6 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._availabilitiesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Availabilities.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._availabilitiesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._animalsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Animals.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._animalsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._usersTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -25193,6 +26319,14 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._animalsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Animals.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._animalsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -25203,6 +26337,14 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(HumaneSocietyDatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._animalsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Animals.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._animalsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._locationsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Locations.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -25224,22 +26366,6 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._usersTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._animalsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Animals.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._animalsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._availabilitiesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Availabilities.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._availabilitiesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -25291,6 +26417,14 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._availabilitiesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Availabilities.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._availabilitiesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._classesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Classes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -25328,6 +26462,14 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._pricesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._shot_StatusesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Shot_Statuses.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._shot_StatusesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -25586,6 +26728,11 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
             }
             if (((this._pricesTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._pricesTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._shot_StatusesTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._shot_StatusesTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -25858,6 +27005,15 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                         adaptersWithAcceptChangesDuringUpdate.Add(this._pricesTableAdapter.Adapter);
                     }
                 }
+                if ((this._shot_StatusesTableAdapter != null)) {
+                    revertConnections.Add(this._shot_StatusesTableAdapter, this._shot_StatusesTableAdapter.Connection);
+                    this._shot_StatusesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._shot_StatusesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._shot_StatusesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._shot_StatusesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._shot_StatusesTableAdapter.Adapter);
+                    }
+                }
                 if ((this._speciesTableAdapter != null)) {
                     revertConnections.Add(this._speciesTableAdapter, this._speciesTableAdapter.Connection);
                     this._speciesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -26061,6 +27217,10 @@ SELECT User_ID, UserName_ID, PassWord_ID, Address_ID, Gender_ID, Phone_Number_ID
                 if ((this._pricesTableAdapter != null)) {
                     this._pricesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pricesTableAdapter]));
                     this._pricesTableAdapter.Transaction = null;
+                }
+                if ((this._shot_StatusesTableAdapter != null)) {
+                    this._shot_StatusesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._shot_StatusesTableAdapter]));
+                    this._shot_StatusesTableAdapter.Transaction = null;
                 }
                 if ((this._speciesTableAdapter != null)) {
                     this._speciesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._speciesTableAdapter]));
