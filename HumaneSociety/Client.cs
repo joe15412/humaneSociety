@@ -9,8 +9,6 @@ namespace HumaneSociety
 {
     class Client
     {
-
-        string status;
         Management management;
         UserInterface UI;
         public int userID;
@@ -27,7 +25,9 @@ namespace HumaneSociety
         string firstName;
         string lastName;
         bool isEmployee;
+        string statusLevel;
         bool isReturningUser;
+        int userNameID;
         public Client()
         {
             UI = new UserInterface();
@@ -40,17 +40,16 @@ namespace HumaneSociety
             {
                 CreateAccount();
             }
+            else
+            {
+
+            }
  
         }
         public void RunLogIn()
         {
             CheckIfEmployee();
             CheckIfReturningUser();
-            if (isEmployee == true)
-            {
-             CheckEmployeePassWord();
-
-            }
         }
         public void CreateAccount()
         {
@@ -78,16 +77,37 @@ namespace HumaneSociety
             CheckAddressNumber();
             CheckAcocountCreation();
         }
+        void LogIn()
+        {
+            UI.DisplayUserNameLogIn();
+            userName = UI.GetUserInput();
+            UI.DisplayPassWordLogIn();
+            passWord = UI.GetUserInput();
+            if (management.CheckPreviousUserName(userName) == true)
+            {
+
+               if (management.CheckPassWordMatchToUserID(management.MatchUserNameToUserNameID(userName)) == false)
+                {
+                    UI.DisplayIncorrectLogIn();
+                    LogIn();
+                }
+               else 
+                {
+                    userID = management.MatchUserNameToUserNameID(userName);
+                }
+            }
+        }
         void CheckIfEmployee()
         {
             UI.Welcome();
             if (UI.GetUserInput() == "1")
             {
                 isEmployee = false;
+                statusLevel = "Customer";
             }
             else if (UI.GetUserInput() == "2")
             {
-                isEmployee = true;
+                CheckEmployeePassWord();
             }
         }
         void CheckIfReturningUser()
@@ -109,9 +129,15 @@ namespace HumaneSociety
         void CheckEmployeePassWord()
         {
             UI.DisplayEmployeeComfirmation();
-            if (UI.GetUserInput() != management.employeePassWord)
+
+            if (management.CheckPreviousUserName(UI.GetUserInput()) == false)
             {
                 CheckIfEmployee();
+            }
+            else
+            {
+                statusLevel = "Employee";
+                isEmployee = true;
             }
 
         }
@@ -119,15 +145,6 @@ namespace HumaneSociety
         {
             UI.DisplaySetUserNameOption();
             userName = UI.GetUserInput();
-            CheckDabataseForUserName();
-        }
-        void CheckDabataseForUserName()
-        {
-            if (management.CheckUserName(userName) == false)
-            {
-                UI.DisplayUsedUserName();
-                SetUserName();
-            }
         }
         void CheckUserName()
         {
@@ -384,18 +401,25 @@ namespace HumaneSociety
                     CreateAccount();
                     break;
                 case "13":
-                    CheckDabataseForUserName();
-                    SendNewAccountInformation();
+                    if (management.CheckPreviousUserName(userName) == false)
+                    {
+                        SendNewAccountInformation();
+                    }
+                    else
+                    {
+                        UI.DisplayUsedUserName();
+                        CheckAcocountCreation();
+                    }
+                    // run this shit
                     break;
                 default:
                     CheckAcocountCreation();
                     break;
             }
-            CheckAcocountCreation();
         }
         public void SendNewAccountInformation()
         {
-            userID = management.AddUser(userName, passWord, gender, phoneNumber, city, state, zipcode, street, addressNumber);
+            userID = management.AddUser(userName, passWord, gender, phoneNumber, city, state, zipcode, street, addressNumber, statusLevel);
             Console.WriteLine(userID);
         }
 

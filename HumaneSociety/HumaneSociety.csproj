@@ -42,14 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adoptee.cs" />
-    <Compile Include="Adopter.cs" />
-    <Compile Include="Animal.cs" />
-    <Compile Include="Bird.cs" />
-    <Compile Include="Cat.cs" />
     <Compile Include="Client.cs" />
-    <Compile Include="Dog.cs" />
-    <Compile Include="Ferret.cs" />
+    <Compile Include="HumaneSocietyDatabaseDataSet.cs">
+      <DependentUpon>HumaneSocietyDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="HumaneSocietyDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -63,7 +59,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Rabbit.cs" />
     <Compile Include="UserInterface.cs" />
   </ItemGroup>
   <ItemGroup>

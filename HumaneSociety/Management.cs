@@ -22,9 +22,20 @@ namespace HumaneSociety
         Queue<string> cities = new Queue<string>();
         Queue<string> zipCodes = new Queue<string>();
         Queue<string> states = new Queue<string>();
-
+        Queue<int> passWordIDs = new Queue<int>();
+        Queue<int> addressIDs = new Queue<int>();
+        Queue<int> genderIDs = new Queue<int>();
+        Queue<int> phoneNumberIDs = new Queue<int>();
+        Queue<int> addressNumberIDs = new Queue<int>();
+        Queue<int> streetIDs = new Queue<int>();
+        Queue<int> cityIDs = new Queue<int>();
+        Queue<int> zipCodeIDs = new Queue<int>();
+        Queue<int> stateIDs = new Queue<int>();
+        Queue<string> employeePassWords = new Queue<string>();
+        Queue<string> statuses = new Queue<string>();
+        Queue<int> statusIDs = new Queue<int>();
+        Queue<int> userIDs = new Queue<int>();
         //Add this to database later.
-        public string employeePassWord = "1234";
 
         public Management()
         {
@@ -40,7 +51,6 @@ namespace HumaneSociety
         //}
         void FindUserName(string userInput )
         {
-            userNames.Clear();
             var results = (from x in humaneSocietyData.UserNames
                          where x.User_Name == userInput
                          select x.User_Name).ToList();
@@ -49,54 +59,172 @@ namespace HumaneSociety
                 userNames.Enqueue(result);
             }
         }
-
-        //void FindUserName2(string userInput)
-        //{
-        //    var matchedUserName = humaneSocietyData.UserNames.FindByUserName_ID(userInput)    Where(userName => userName.ToString() == userInput);
-
-        //}
-        //void FindUserNameID(string userInput)
-        //{
-        //    userNameIDs.Clear();
-        //    userNameIDs = (from x in humaneSocietyData.Users.FindByUser_ID()
-        //                 where x == Convert.ToInt32(userInput)
-        //                 select x).ToList();
-        //}
-
-        
-        public bool CheckUserName(string userInput)
+        public bool CheckPreviousUserName(string userInput)
         {
             FindUserName(userInput);
-            bool userInputCreationAllowed = CheckList(userNames);
+            bool userInputCreationAllowed = CheckIfThereIsInput(userNames);
             return userInputCreationAllowed;
         }
-        bool CheckList(Queue<string> chosenList)
+        bool CheckIfThereIsInput(Queue<string> chosenList)
         {
             if (chosenList.Count > 0)
             {
-                return false;
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
         }
-        bool CheckPassWord(string userInput)
+        bool CheckPreviousStatuses(string userInput)
         {
-            FindPasswords(userInput);
-            bool passWordCreationAllowed = CheckList(passWords);
+            FindStatus(userInput);
+            bool statusCreationAllowed = CheckIfThereIsInput(statuses);
+            return statusCreationAllowed;
+        }
+
+        void FindStatus(string userInput)
+        {
+            var results = (from x in humaneSocietyData.EmployeeStatuses
+                           where x.Status_Name == userInput
+                           select x.Status_Name).ToList();
+            foreach (string result in results)
+            {
+                statuses.Enqueue(result);
+            }
+        }
+
+        void FindStatusID(string userInput)
+        {
+            var results = (from x in humaneSocietyData.EmployeeStatuses
+                           where x.Status_Name == userInput
+                           select x.EmployeeStatus_ID).ToList();
+            foreach (int result in results)
+            {
+                statusIDs.Enqueue(result);
+            }
+        }
+        bool CheckPreviousPassWord(string userInput)
+        {
+            FindPassword(userInput);
+            bool passWordCreationAllowed = CheckIfThereIsInput(passWords);
             return passWordCreationAllowed;
         }
 
-        void FindPasswords(string userInput)
+        void FindPassword(string userInput)
         {
-            passWords.Clear();
             var results = (from x in humaneSocietyData.PassWords
                          where x.PassWord == userInput
                          select x.PassWord).ToList();
             foreach (string result in results)
             {
                 passWords.Enqueue(result);
+            }
+        }
+        void FindPasswordID(string userInput)
+        {
+            var results = (from x in humaneSocietyData.PassWords
+                           where x.PassWord == userInput
+                           select x.PassWord_ID).ToList();
+            foreach (int result in results)
+            {
+                passWordIDs.Enqueue(result);
+            }
+        }
+        void FindEmployeePassWord(string userInput)
+        {
+            var results = (from x in humaneSocietyData.Employee_Passwords
+                           where x.Employee_PassWord == userInput
+                           select x.Employee_PassWord).ToList();
+            foreach (string result in results)
+            {
+                employeePassWords.Enqueue(result);
+            }
+        }
+        bool CheckPreviousEmployeePassWord(string userInput)
+        {
+            FindEmployeePassWord(userInput);
+            bool employeePassWordCreationAllowed = CheckIfThereIsInput(employeePassWords);
+            return employeePassWordCreationAllowed;
+        }
+        void FindGenderID(string userInput)
+        {
+            var results = (from x in humaneSocietyData.Genders
+                           where x.Gender_Name == userInput
+                           select x.Gender_ID).ToList();
+            foreach (int result in results)
+            {
+                genderIDs.Enqueue(result);
+            }
+        }
+        void FindUserNameID(string userInput)
+        {
+            var results = (from x in humaneSocietyData.UserNames
+                           where x.User_Name == userInput
+                           select x.UserName_ID).ToList();
+            foreach (int result in results)
+            {
+                userNameIDs.Enqueue(result);
+            }
+        }
+        void FindPhoneNumberID(string userInput)
+        {
+            var results = (from x in humaneSocietyData.Phone_Numbers
+                           where x.Phone_Number == userInput
+                           select x.Phone_Number_ID).ToList();
+            foreach (int result in results)
+            {
+                phoneNumberIDs.Enqueue(result);
+            }
+        }
+        void FindAddressNumberID(string userInput)
+        {
+            var results = (from x in humaneSocietyData.Address_Numbers
+                           where x.Address_Number == userInput
+                           select x.Address_Number_ID).ToList();
+            foreach (int result in results)
+            {
+                addressNumberIDs.Enqueue(result);
+            }
+        }
+        void FindStreetID(string userInput)
+        {
+            var results = (from x in humaneSocietyData.Streets
+                           where x.Street_Name == userInput
+                           select x.Street_ID).ToList();
+            foreach (int result in results)
+            {
+                streetIDs.Enqueue(result);
+            }
+        }
+        void FindCityID(string userInput)
+        {
+            var results = (from x in humaneSocietyData.Cities
+                           where x.City_Name == userInput
+                           select x.City_ID).ToList();
+            foreach (int result in results)
+            {
+                cityIDs.Enqueue(result);
+            }
+        }
+        void FindStateID(string userInput)
+        {
+            var results = (from x in humaneSocietyData.States
+                           where x.State_Name == userInput
+                           select x.State_ID).ToList();
+            foreach (int result in results)
+            {
+                stateIDs.Enqueue(result);
+            }
+        }
+        void FindZipCodeID(string userInput)
+        {
+            var results = (from x in humaneSocietyData.ZipCodes
+                           where x.ZipCode_Number == userInput
+                           select x.ZipCode_ID).ToList();
+            foreach (int result in results)
+            {
+                zipCodeIDs.Enqueue(result);
             }
         }
         //bool CheckAddress(string userInput)
@@ -115,7 +243,6 @@ namespace HumaneSociety
 
         void FindCity(string userInput)
         {
-            cities.Clear();
             var results = (from x in humaneSocietyData.Cities
                          where x.City_Name == userInput
                          select x.City_Name).ToList();
@@ -124,15 +251,14 @@ namespace HumaneSociety
                 cities.Enqueue(result);
             }
         }
-        bool CheckCities(string userInput)
+        bool CheckPreviousCities(string userInput)
         {
-            bool CityCeationAllowed = CheckList(cities);
+            bool CityCeationAllowed = CheckIfThereIsInput(cities);
             return CityCeationAllowed;
             // this will have to go more in depth since there are several foreign keys
         }
         void FindState(string userInput)
         {
-            states.Clear();
            var results = (from x in humaneSocietyData.States
                       where x.State_Name == userInput
                       select x.State_Name).ToList();
@@ -141,9 +267,9 @@ namespace HumaneSociety
                 states.Enqueue(result);
             }
         }
-        bool CheckStates(string userInput)
+        bool CheckPreviousStates(string userInput)
         {
-            bool StateCeationAllowed = CheckList(states);
+            bool StateCeationAllowed = CheckIfThereIsInput(states);
             return StateCeationAllowed;
             // this will have to go more in depth since there are several foreign keys
         }
@@ -157,16 +283,15 @@ namespace HumaneSociety
                 zipCodes.Enqueue(result);
             }
         }
-        bool CheckZipCodes(string userInput)
+        bool CheckPreviousZipCodes(string userInput)
         {
-            bool ZipCodeCeationAllowed = CheckList(zipCodes);
+            bool ZipCodeCeationAllowed = CheckIfThereIsInput(zipCodes);
             return ZipCodeCeationAllowed;
             // this will have to go more in depth since there are several foreign keys
         }
 
         void FindStreet(string userInput)
         {
-            streets.Clear();
             var results = (from x in humaneSocietyData.Streets
                        where x.Street_Name == userInput
                        select x.Street_Name).ToList();
@@ -175,15 +300,14 @@ namespace HumaneSociety
                 streets.Enqueue(result);
             }
         }
-        bool CheckStreets(string userInput)
+        bool CheckPreviousStreets(string userInput)
         {
-            bool StreetCeationAllowed = CheckList(streets);
+            bool StreetCeationAllowed = CheckIfThereIsInput(streets);
             return StreetCeationAllowed;
             // this will have to go more in depth since there are several foreign keys
         }
         void FindAddressNumber(string userInput)
         {
-            addressNumbers.Clear();
             var results  = (from x in humaneSocietyData.Address_Numbers
                               where x.Address_Number == userInput
                               select x.Address_Number).ToList();
@@ -192,20 +316,19 @@ namespace HumaneSociety
                 addressNumbers.Enqueue(result);
             }
         }
-        bool CheckAddressNumber(string userInput)
+        bool CheckPreviousAddressNumber(string userInput)
         {
-            bool AddressNumberCeationAllowed = CheckList(addressNumbers);
+            bool AddressNumberCeationAllowed = CheckIfThereIsInput(addressNumbers);
             return AddressNumberCeationAllowed;
         }
 
-        bool CheckGender(string userInput)
+        bool CheckPreviousGender(string userInput)
         {
-            bool genderCreationAllowed = CheckList(genders);
+            bool genderCreationAllowed = CheckIfThereIsInput(genders);
             return genderCreationAllowed;
         }
         void FindGender(string userInput)
         {
-            genders.Clear();
             var results = (from x in humaneSocietyData.Genders
                        where x.Gender_Name == userInput
                        select x.Gender_Name).ToList();
@@ -214,14 +337,13 @@ namespace HumaneSociety
                 genders.Enqueue(result);
             }
         }
-        bool CheckPhoneNumber(string userInput)
+        bool CheckPreviousPhoneNumber(string userInput)
         {
-            bool phoneNumberCreationAllowed = CheckList(phoneNumbers);
+            bool phoneNumberCreationAllowed = CheckIfThereIsInput(phoneNumbers);
             return phoneNumberCreationAllowed;
         }
         void FindPhoneNumber(string userInput)
         {
-            phoneNumbers.Clear();
             var results = (from x in humaneSocietyData.Phone_Numbers
                             where x.Phone_Number == userInput
                             select x.Phone_Number).ToList();
@@ -230,30 +352,68 @@ namespace HumaneSociety
                 phoneNumbers.Enqueue(result);
             }
         }
-        public int AddUser(string userNameInput, string passWordInput, string genderInput,string phoneNumberInput, string cityInput, string stateInput, string zipCodeInput, string streetInput, string addressNumberInput)
+        public bool CheckPassWordMatchToUserID(int userIDInput)
+        {
+            var results = (from x in humaneSocietyData.Users
+                           where x.User_ID == userIDInput
+                           select x.PassWord_ID).ToList();
+            foreach(int result in results)
+            {
+                MatchPassWordIDToPassword(result);
+            }
+            return CheckIfThereIsInput(passWords);
+        }
+        void MatchPassWordIDToPassword(int passwordIDInput)
+        {
+            var results = (from x in humaneSocietyData.PassWords
+                          where x.PassWord_ID == passwordIDInput
+                          select x.PassWord).ToList();
+            foreach(string result in results)
+            {
+                passWords.Enqueue(result);
+            }
+        }
+        public int MatchUserNameToUserNameID(string userNameImput)
+        {
+            FindUserNameID(userNameImput);
+            var results = (from x in humaneSocietyData.Users
+                           where x.UserName_ID == (userNameIDs.Dequeue())
+                           select x.User_ID).ToList();
+            foreach (int result in results)
+            {
+                userIDs.Enqueue(result);
+            }
+            return userIDs.Dequeue();
+        }
+        public int AddUser(string userNameInput, string passWordInput, string genderInput,string phoneNumberInput, string cityInput, string stateInput, string zipCodeInput, string streetInput, string addressNumberInput, string status)
         {
             HumaneSocietyDatabaseDataSet.UsersRow newUsersRow = humaneSocietyData.Users.NewUsersRow();
             newUsersRow.UserName_ID = AddUserNameID(userNameInput);
             newUsersRow.PassWord_ID = AddPassWordID(passWordInput);
             newUsersRow.Gender_ID = AddGenderID(genderInput);
             newUsersRow.Phone_Number_ID = AddPhoneNumberID(phoneNumberInput);
-            newUsersRow.Address_ID = AddAddress(cityInput,stateInput,zipCodeInput,streetInput, addressNumberInput);
+            newUsersRow.Address_ID = AddAddressID(cityInput,stateInput,zipCodeInput,streetInput, addressNumberInput);
+            newUsersRow.Status_ID = AddStatusID(status);
             return newUsersRow.User_ID;
         }
         int ReplaceUserName(int userID, string userNameInput)
         {
-            if (CheckUserName(userNameInput) == true)
+            if (CheckPreviousUserName(userNameInput) == true)
             {
                 int newUserNameID = AddUserNameID(userNameInput);
                 HumaneSocietyDatabaseDataSet.UsersRow currentUserRow = humaneSocietyData.Users.FindByUser_ID(userID);
                 currentUserRow.UserName_ID = newUserNameID;
                 return currentUserRow.UserName_ID;
-               
+            }
+            else
+            {
+                FindUserNameID(userNameInput);
+                return userNameIDs.Dequeue();
             }
         }
         int ReplacePassWord(int userID, string passWordInput)
         {
-            if (CheckPassWord(passWordInput) == true)
+            if (CheckPreviousPassWord(passWordInput) == true)
             {
                 int newPassWordID = AddPassWordID(passWordInput);
                 HumaneSocietyDatabaseDataSet.UsersRow currentUserRow = humaneSocietyData.Users.FindByUser_ID(userID);
@@ -263,13 +423,14 @@ namespace HumaneSociety
             }
             else
             {
-                FindPassword(passWordInput);
-                return passWords[0];
+                FindPasswordID(passWordInput);
+                return passWordIDs.Dequeue();
+
             }
         }
         int ReplaceGender(int userID, string genderInput)
         {
-            if (CheckGender(genderInput) == true)
+            if (CheckPreviousGender(genderInput) == true)
             {
                 int newGenderID = AddGenderID(genderInput);
                 HumaneSocietyDatabaseDataSet.UsersRow currentUserRow = humaneSocietyData.Users.FindByUser_ID(userID);
@@ -279,13 +440,13 @@ namespace HumaneSociety
             }
             else
             {
-                FindGender(genderInput);
-                return genders[0];
+                FindGenderID(genderInput);
+                return genderIDs.Dequeue();
             }
         }
         int ReplacePhoneNumber(int userID, string phoneNumberInput)
         {
-            if (CheckGender(phoneNumberInput) == true)
+            if (CheckPreviousGender(phoneNumberInput) == true)
             {
                 int newPhoneNumberID = AddPhoneNumberID(phoneNumberInput);
                 HumaneSocietyDatabaseDataSet.UsersRow currentUserRow = humaneSocietyData.Users.FindByUser_ID(userID);
@@ -295,19 +456,28 @@ namespace HumaneSociety
             }
             else
             {
-                FindPhoneNumber(phoneNumberInput);
-                return phoneNumbers[0];
+                FindPhoneNumberID(phoneNumberInput);
+                return phoneNumberIDs.Dequeue();
             }
         }
         int AddUserNameID(string userNameInput)
         {
-            HumaneSocietyDatabaseDataSet.UserNamesRow newUserName = humaneSocietyData.UserNames.NewUserNamesRow();
-            newUserName.User_Name = userNameInput;
-            return newUserName.UserName_ID;
+            if (CheckPreviousUserName(userNameInput) == false)
+            {
+                HumaneSocietyDatabaseDataSet.UserNamesRow newUserName = humaneSocietyData.UserNames.NewUserNamesRow();
+                newUserName.User_Name = userNameInput;
+                return newUserName.UserName_ID;
+            }
+            else
+            {
+                FindUserNameID(userNameInput);
+                return userNameIDs.Dequeue();
+            }
+
         }
         int AddPassWordID(string passWordInput)
         {
-            if (CheckPassWord(passWordInput) == true)
+            if (CheckPreviousPassWord(passWordInput) == false)
             {
                 HumaneSocietyDatabaseDataSet.PassWordsRow newPassWord = humaneSocietyData.PassWords.NewPassWordsRow();
                 newPassWord.PassWord = passWordInput;
@@ -315,14 +485,14 @@ namespace HumaneSociety
             }
             else
             {
-                FindPassword(passWordInput);
-                return passWords[0];
+                FindPasswordID(passWordInput);
+                return passWordIDs.Dequeue();
             }
 
         }
         int AddGenderID(string genderInput)
         {
-            if (CheckGender(genderInput) == true)
+            if (CheckPreviousGender(genderInput) == false)
             {
                 HumaneSocietyDatabaseDataSet.GendersRow newGender = humaneSocietyData.Genders.NewGendersRow();
                 newGender.Gender_Name = genderInput;
@@ -330,14 +500,14 @@ namespace HumaneSociety
             }
             else
             {
-                FindGender(genderInput);
-                return genderInput[0];
+                FindGenderID(genderInput);
+                return genderIDs.Dequeue();
             }
 
         }
         int AddPhoneNumberID(string phoneNumberInput)
         {
-            if (CheckPhoneNumber(phoneNumberInput) == true)
+            if (CheckPreviousPhoneNumber(phoneNumberInput) == false)
             {
                 HumaneSocietyDatabaseDataSet.Phone_NumbersRow newPhoneNumber = humaneSocietyData.Phone_Numbers.NewPhone_NumbersRow();
                 newPhoneNumber.Phone_Number = phoneNumberInput;
@@ -345,23 +515,38 @@ namespace HumaneSociety
             }
             else
             {
-                FindPhoneNumber(phoneNumberInput);
-                return phoneNumbers[0];
+                FindPhoneNumberID(phoneNumberInput);
+                return genderIDs.Dequeue();
             }
         }
-        int AddAddress(string cityInput, string stateInput, string zipCodeInput, string streetInput, string addressNumberInput)
+        int AddStatusID(string statusInput)
+        {
+            if (CheckPreviousStatuses(statusInput) == false)
+            {
+                HumaneSocietyDatabaseDataSet.EmployeeStatusesRow newStatusesRow = humaneSocietyData.EmployeeStatuses.NewEmployeeStatusesRow();
+                newStatusesRow.Status_Name = statusInput;
+                return newStatusesRow.EmployeeStatus_ID;
+            }
+            else
+            {
+                FindStatusID(statusInput);
+                return statusIDs.Dequeue();
+            }
+
+        }
+        int AddAddressID(string cityInput, string stateInput, string zipCodeInput, string streetInput, string addressNumberInput)
         {
             HumaneSocietyDatabaseDataSet.AddressesRow newAddressesRow = humaneSocietyData.Addresses.NewAddressesRow();
                 newAddressesRow.City_ID = AddCityID(cityInput);
                 newAddressesRow.State_ID = AddStateID(stateInput);
                 newAddressesRow.ZipCode_ID = AddZipCodeID(zipCodeInput);
-                //newAddressesRow.Street_ID = AddStreetID(streetInput);
-                //newAddressesRow.Address_Number_ID = AddAddressNumberID(addressNumberInput);
-                return newAddressesRow.Address_ID;
+                newAddressesRow.Street_ID = AddStreetID(streetInput);
+                newAddressesRow.Address_Number_ID = AddAddressNumberID(addressNumberInput);
+            return newAddressesRow.Address_ID;
         }
         int AddCityID(string cityInput)
         {
-            if (CheckCities(cityInput) == true)
+            if (CheckPreviousCities(cityInput) == false)
             {
                 HumaneSocietyDatabaseDataSet.CitiesRow newCitiesRow = humaneSocietyData.Cities.NewCitiesRow();
                 newCitiesRow.City_Name = cityInput;
@@ -369,15 +554,15 @@ namespace HumaneSociety
             }
             else
             {
-                FindCity(cityInput);
-                return cities[0];
+                FindCityID(cityInput);
+                return cityIDs.Dequeue();
             }
 
         }
 
         int AddStateID(string stateInput)
         {
-            if (CheckStates(stateInput) == true)
+            if (CheckPreviousStates(stateInput) == false)
             {
                 HumaneSocietyDatabaseDataSet.StatesRow newStatesRow = humaneSocietyData.States.NewStatesRow();
                 newStatesRow.State_Name = stateInput;
@@ -385,14 +570,14 @@ namespace HumaneSociety
             }
             else
             {
-                FindCity(stateInput);
-                return cities[0];
+                FindStateID(stateInput);
+                return stateIDs.Dequeue();
             }
 
         }
         int AddZipCodeID(string zipCodeInput)
         {
-            if (CheckZipCodes(zipCodeInput) == true)
+            if (CheckPreviousZipCodes(zipCodeInput) == false)
             {
                 HumaneSocietyDatabaseDataSet.ZipCodesRow newZipCodesRow = humaneSocietyData.ZipCodes.NewZipCodesRow();
                 newZipCodesRow.ZipCode_Number = zipCodeInput;
@@ -400,37 +585,37 @@ namespace HumaneSociety
             }
             else
             {
-                FindZipCode(zipCodeInput);
-                return zipCodes[0];
+                FindZipCodeID(zipCodeInput);
+                return zipCodeIDs.Dequeue();
             }
         }
-        //int AddStreetID(string streetInput)
-        //{
-        //    if (CheckStreets(streetInput) == true)
-        //    {
-        //        HumaneSocietyDatabaseDataSet.StreetsRow newStreetsRow = humaneSocietyData.Streets.NewStreetsRow();
-        //        newStreetsRow.Streets_Name = streetInput;
-        //        return newStreetsRow.Streets_ID;
-        //    }
-        //    else
-        //    {
-        //        FindStreet(streetInput);
-        //        return streets[0];
-        //    }
-        //}
-        //int AddAddressNumberID(string addressNumberInput)
-        //{
-        //    if (CheckAddressNumber(addressNumberInput) == true)
-        //    {
-        //        HumaneSocietyDatabaseDataSet.Address_NumbersRow newAddressNumbersRow = humaneSocietyData.Address_Numbers.NewAddress_NumbersRow();
-        //        newAddressNumbersRow.Address_Number = addressNumberInput;
-        //        return newAddressNumbersRow.Address_Number_ID; ;
-        //    }
-        //    else
-        //    {
-        //        FindAddressNumber(addressNumberInput);
-        //        return addressNumbers[0];
-        //    }
-        //}
+        int AddStreetID(string streetInput)
+        {
+            if (CheckPreviousStreets(streetInput) == false)
+            {
+                HumaneSocietyDatabaseDataSet.StreetsRow newStreetsRow = humaneSocietyData.Streets.NewStreetsRow();
+                newStreetsRow.Street_Name = streetInput;
+                return newStreetsRow.Street_ID;
+            }
+            else
+            {
+                FindStreetID(streetInput);
+                return streetIDs.Dequeue();
+            }
+        }
+        int AddAddressNumberID(string addressNumberInput)
+        {
+            if (CheckPreviousAddressNumber(addressNumberInput) == false)
+            {
+                HumaneSocietyDatabaseDataSet.Address_NumbersRow newAddressNumbersRow = humaneSocietyData.Address_Numbers.NewAddress_NumbersRow();
+                newAddressNumbersRow.Address_Number = addressNumberInput;
+                return newAddressNumbersRow.Address_Number_ID; ;
+            }
+            else
+            {
+                FindAddressNumber(addressNumberInput);
+                return addressIDs.Dequeue();
+            }
+        }
     }
 }

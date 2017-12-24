@@ -174,6 +174,18 @@ namespace HumaneSociety
             Console.WriteLine("You have completed your account creation." + Environment.NewLine + "Please select any of the follow:" +Environment.NewLine + "1) UserName" + Environment.NewLine + "2) First Name" + Environment.NewLine + "3) Last Name" + Environment.NewLine + "4) PassWord" + Environment.NewLine + "5) Gender" + Environment.NewLine + "6) Phone Number" + Environment.NewLine + "7) Zip Code" + Environment.NewLine + "8) State" + Environment.NewLine + "9) City" + Environment.NewLine + "10) Street" + Environment.NewLine + "11) Address Number" + Environment.NewLine + "12) Restart account creation" +Environment.NewLine + "13) Log in with your new account");
         }
         //employee adds animal
+        public void DisplayUserNameLogIn()
+        {
+            Console.WriteLine("Please enter your username.");
+        }
+        public void DisplayPassWordLogIn()
+        {
+            Console.WriteLine("Please enter your password.");
+        }
+        public void DisplayIncorrectLogIn()
+        {
+            Console.WriteLine("You have entered the incorrect combination of Username and Password");
+        }
         public void EmployeeAddAnimal()
         {
             Console.WriteLine("Do you want to add a new animal?");
