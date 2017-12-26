@@ -28,6 +28,7 @@ namespace HumaneSociety
         string statusLevel;
         bool isReturningUser;
         int userNameID;
+        int animalSearchID;
         public Client()
         {
             UI = new UserInterface();
@@ -69,20 +70,42 @@ namespace HumaneSociety
             }
             else if (UI.GetUserInput() == "2")
             {
-                AddNewAnimal();
-            }
-            else if (UI.GetUserInput() == "3")
-            {
-                ChangeExistingAnimal();
+            //    AddNewAnimal();
+            //}
+            //else if (UI.GetUserInput() == "3")
+            //{
+            //    ChangeExistingAnimal();
             }
         }
         void CheckAnimalViewAnswer()
         {
 
         }
-
-
-
+        void CheckForAnimalIDAnswer()
+        {
+            UI.DisplayCheckIfAnimalIDIsKnown();
+            if (UI.GetUserInput() == "1")
+            {
+                CheckForAnimalID();
+            }
+            else if (UI.GetUserInput() == "2")
+            {
+                
+            }
+            else
+            {
+                CheckForAnimalIDAnswer();
+            }
+        }
+        void CheckForAnimalID()
+        {
+            UI.DisplayAnimalIDQuestion();
+            animalSearchID = Convert.ToInt32(UI.GetUserInput());
+            if (management.CheckPreviousAnimalID(animalSearchID) == true)
+            {
+                management.ShowAnimalInformationByID(animalSearchID);
+            }
+        }
         public void RunLogInChecks()
         {
             CheckIfEmployee();

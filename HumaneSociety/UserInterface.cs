@@ -234,7 +234,14 @@ namespace HumaneSociety
 
             // in client, we will match the pick to save what their choice was. Then we will take the info for later UIs
         }
-
+        public void DisplayCheckIfAnimalIDIsKnown()
+        {
+            Console.WriteLine("Do you know the ID associated with the animal you are looking for?" +Environment.NewLine + "1) Yes" +Environment.NewLine+ "2)No");
+        }
+        public void DisplayAnimalIDQuestion()
+        {
+            Console.WriteLine("What is the ID associated with the animal you are looking for?");
+        }
         // for(int i ; i < animal.attributes.count; i++) { cw"i + ")" + animal.Attributes[i] "."
         //public void DisplayAnimalOptions(Client client)
         //{

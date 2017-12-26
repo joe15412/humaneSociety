@@ -35,7 +35,17 @@ namespace HumaneSociety
         Queue<string> statuses = new Queue<string>();
         Queue<int> statusIDs = new Queue<int>();
         Queue<int> userIDs = new Queue<int>();
-        //Add this to database later.
+        Queue<int> animalIDs = new Queue<int>();
+        Queue<int> nameIDs = new Queue<int>();
+        Queue<int> firstNameIDs = new Queue<int>();
+        Queue<string> firstNames = new Queue<string>();
+        Queue<int> lastNameIDs = new Queue<int>();
+        Queue<string> lastNames = new Queue<string>();
+        Queue<string> animalShotStatuses = new Queue<string>();
+        Queue<int> animalShotStatusIDs = new Queue<int>();
+        List<string> animalInformation = new List<string>();
+        Queue<string> animalAvailabilities = new Queue<string> ();
+        Queue<int> animalAvailabilityIDs = new Queue<int>();
 
         public Management()
         {
@@ -66,6 +76,17 @@ namespace HumaneSociety
             return userInputCreationAllowed;
         }
         bool CheckIfThereIsInput(Queue<string> chosenList)
+        {
+            if (chosenList.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        bool CheckIfThereIsInput(Queue<int> chosenList)
         {
             if (chosenList.Count > 0)
             {
@@ -641,5 +662,109 @@ namespace HumaneSociety
                 return addressIDs.Dequeue();
             }
         }
+        void  MatchAnimalIDToAnimalNameID(int userInput)
+        {
+            var results = (from x in humaneSocietyData.Animals
+                           where x.Animal_ID == userInput
+                           select x.Name_ID).ToList();
+            foreach (int result in results)
+            {
+                nameIDs.Enqueue(result);
+            }
+        }
+        void MatchAnimalNameIDToNames(int nameIDInput)
+        {
+            MatchAnimalIDToAnimalNameID(nameIDInput);
+            int nameIDFound = nameIDs.Dequeue();
+            MatchNameIDToFirstNameID(nameIDInput);
+            MatchNameIDToLastNameID(nameIDInput);
+            MatchFirstNameIDToFirstName();
+            MatchLastNameIDToLastName();
+        }
+        void MatchFirstNameIDToFirstName()
+        {
+            int firstNameIDFound = firstNameIDs.Dequeue();
+            var results = (from x in humaneSocietyData.First_Names
+                           where x.First_Names_ID == firstNameIDFound
+                           select x.First_Name).ToList();
+            foreach (string result in results)
+            {
+                firstNames.Enqueue(result);
+            }
+        }
+        void MatchLastNameIDToLastName()
+        {
+            int lastNameIDFound = lastNameIDs.Dequeue();
+            var results = (from x in humaneSocietyData.Last_Names
+                           where x.Last_Names_ID == lastNameIDFound
+                           select x.Last_Name).ToList();
+            foreach (string result in results)
+            {
+                lastNames.Enqueue(result);
+            }
+        }
+        void MatchNameIDToFirstNameID(int nameIDInput)
+        {
+            var firstNameResults = (from x in humaneSocietyData.Names
+                                    where x.Names_ID == nameIDInput
+                                    select x.First_Names_ID).ToList();
+            foreach (int result in firstNameResults)
+            {
+                firstNameIDs.Enqueue(result);
+            }
+        }
+        void MatchNameIDToLastNameID(int nameIDInput)
+        {
+            var lastNameResults = (from x in humaneSocietyData.Names
+                                    where x.Names_ID == nameIDInput
+                                    select x.Last_Names_ID).ToList();
+            foreach (int result in lastNameResults)
+            {
+                lastNameIDs.Enqueue(result);
+            }
+        }
+        public bool CheckPreviousAnimalID(int userInput)
+        {
+            FindAnimalID(userInput);
+            bool userInputCreationAllowed = CheckIfThereIsInput(animalIDs);
+            return userInputCreationAllowed;
+        }
+        void FindAnimalID(int animalIDInput)
+        {
+            var results = (from x in humaneSocietyData.Animals
+                           where x.Animal_ID == animalIDInput
+                           select x.Animal_ID).ToList();
+            foreach (int result in results)
+            {
+                animalIDs.Enqueue(result);
+            }
+        }
+        void MatchAnimalIDToAvailabilityID(int animalIDInput)
+        {
+            var results = (from x in humaneSocietyData.Animals
+                           where x.Animal_ID == animalIDInput
+                           select x.Availability_ID).ToList();
+            foreach (int result in results)
+            {
+                animalAvailabilityIDs.Enqueue(result);
+            }
+        }
+        void MatchAvailabilityIDToAvailability()
+        {
+            int animalAvailabilityFound = animalAvailabilityIDs.Dequeue();
+            var results = (from x in humaneSocietyData.Availabilities
+                       where x.Availabilities_ID == animalAvailabilityFound
+                       select x.Availabilities_Name).ToList();
+            foreach(string result in results)
+            {
+                animalAvailabilities.Enqueue(result);
+            }
+        }
+        public void ShowAnimalInformationByID(int animalIDInput)
+        {
+           
+        }
+
+
     }
 }
